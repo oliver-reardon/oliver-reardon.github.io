@@ -100,6 +100,7 @@ Focused on web-based tool design and online motion graphics.
 - **Integrated software repo into a CI/CD pipeline** with GitHub pull request approvals.  
 - [**Created AWS Lambda function**](https://github.com/1sth1sth1ng0n/ms-graph-api-ea/blob/main/handler.py) to query Azure AD group memberships efficiently.
 - [**Automation pipelines**](https://github.com/pelotoncycle/cpe-onsite-automations) used by external vendors and ITAM for audited requests and elevated access to management systems and tooling.
+- [**My Talent Profile**](https://github.com/oliver-reardon/oliver-reardon.github.io) produced using [hugo](https://gohugo.io/) and deployed using [GitHub Actions](https://github.com/oliver-reardon/oliver-reardon.github.io/blob/main/.github/workflows/deploy.yml) with cache validation.
 
 ---
 
