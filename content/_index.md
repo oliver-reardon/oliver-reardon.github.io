@@ -1,5 +1,5 @@
 ---
-title: "Oliver Reardon – Talent Profile"
+title: "Oliver Reardon"
 description: "Proven expertise in event-driven automation, security hardening, and infrastructure as code with a focus on reliability, performance, and efficiency."
 date: 2025-03-19T00:00:00Z
 lastmod: 2025-03-19T00:00:00Z
@@ -8,18 +8,10 @@ type: "home"
 layout: "single"
 summary: "Proven expertise in diagnosing complex issues, event-driven automation, and infrastructure as code with a focus on reliability and efficiency."
 draft: false
-menu:
-  main:
-    weight: 1
-    identifier: "home"
-    name: "Home"
-tags: ["DevOps", "Automation", "Infrastructure as Code", "Security", "CI/CD"]
 categories: ["Portfolio", "Resume", "Skills"]
 showToc: true
 showComments: false
----
-
-# Oliver Reardon  
+--- 
 
 Proven expertise in diagnosing complex issues and identifying root causes with precision.
 Specializes in event-driven automation, security hardening, and compliance enforcement.
