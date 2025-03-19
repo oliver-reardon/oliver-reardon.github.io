@@ -57,8 +57,8 @@ jobs:
             ${{ runner.temp }}/hugo_cache
           #key: hugo-${{ github.run_id }}
           key: hugo-${{ hashFiles('content/**', 'layouts/**', 'config/**') }}
-          restore-keys:
-            hugo-
+          #restore-keys:
+          #  hugo-
       - name: Build with Hugo
         run: |
           hugo \
