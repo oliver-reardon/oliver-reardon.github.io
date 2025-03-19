@@ -83,7 +83,9 @@ Focused on web-based tool design and online motion graphics.
 
 ---
 
-## 🔬 Recent Select Projects  
+## 🔬 Recent Select Projects
+
+> Certain repositories are limited to internal project work and can only be accessed within the current organization.
 
 - [**Log forwarding of osquery results**](https://isthisthingon.tech/2025/03/17/osquery-results-to-loki-with-kinesis-data-stream/) to Grafana Loki via AWS Kinesis Data Stream.
 - [**Provisioned an auto-scaling application**](https://github.com/pelotoncycle/cpe-fleet) on AWS ECS with Fargate launch type and RDS, using Terraform.
