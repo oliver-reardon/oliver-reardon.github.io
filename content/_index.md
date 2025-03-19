@@ -9,7 +9,7 @@ Designs and deploys scalable, resilient systems optimized for reliability, perfo
 Experienced in incident management, observability, and infrastructure as code, with a strong focus on minimizing operational toil through automation and strategic design.
 
 📧 [oliver.reardon@gmail.com](mailto:oliver.reardon@gmail.com)  
-🔗 [LinkedIn](https://linkedin.com/in/oliver-reardon) | [isthisthingon.tech](https://isthisthingon.tech) | [GitHub](https://github.com/oliver-reardon)  
+🔗 [LinkedIn](https://linkedin.com/in/oliver-reardon) | [Blog](https://isthisthingon.tech) | [GitHub](https://github.com/oliver-reardon)  
 
 ---
 
