@@ -97,6 +97,7 @@ Focused on web-based tool design and online motion graphics.
 > Certain repositories are limited to internal project work and can only be accessed within the current organization.
 
 - [**Log forwarding of osquery results**](https://isthisthingon.tech/2025/03/17/osquery-results-to-loki-with-kinesis-data-stream/) to Grafana Loki via AWS Kinesis Data Stream.
+- [**Limit access to web app using AWS Web Application Firewall**](https://github.com/pelotoncycle/cpe-fleet/blob/main/terraform/waf.tf) based on defined CIDR blocks while exposing required API endpoints to the public internet.
 - [**Provisioned an auto-scaling application**](https://github.com/pelotoncycle/cpe-fleet) on AWS ECS with Fargate launch type and RDS, using Terraform.
 - [**Puppet Server**](https://github.com/pelotoncycle/cpe-puppet/tree/main/terraform) deployed on EC2 with ingress controlled security group and [r10K control repo](https://github.com/pelotoncycle/cpe-puppet-control-repo).
 - [**Engineered an AWS Managed Grafana instance**](https://github.com/pelotoncycle/cpe-grafana/tree/main) using Terraform, integrated with Okta for federated authentication.
