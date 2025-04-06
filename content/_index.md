@@ -99,7 +99,7 @@ Focused on web-based tool design and online motion graphics.
 - [**Log forwarding of osquery results**](https://isthisthingon.tech/2025/03/17/osquery-results-to-loki-with-kinesis-data-stream/) to Grafana Loki via AWS Kinesis Data Stream.
 - [**Restrict web app access using AWS WAF**](https://github.com/pelotoncycle/cpe-fleet/blob/main/terraform/waf.tf) with CIDR ACL while keeping required API endpoints public.
 - [**Provisioned an auto-scaling application**](https://github.com/pelotoncycle/cpe-fleet) on AWS ECS with Fargate launch type and RDS, using Terraform.
-- [**Puppet Server**](https://github.com/pelotoncycle/cpe-puppet/tree/main/terraform) deployed on EC2 with ingress controlled security group and [r10K control repo](https://github.com/pelotoncycle/cpe-puppet-control-repo).
+- [**Puppet Server**](https://github.com/oliver-reardon/puppet-core/tree/main) deployed on EC2 with ingress controlled security group and [r10K control repo](https://github.com/pelotoncycle/cpe-puppet-control-repo).
 - [**Engineered an AWS Managed Grafana instance**](https://github.com/pelotoncycle/cpe-grafana/tree/main) using Terraform, integrated with Okta for federated authentication.
 - [**Presented series data with Grafana & MySQL**](https://isthisthingon.tech/2021/09/06/jamf-pro-application-usage-reports-using-grafana-and-mysql/) reducing software licensing costs and improving compliance.
 - [**Developed Python CLI**](https://github.com/1sth1sth1ng0n/smscli) to automate inventory data manipulation after a vendor change.  
