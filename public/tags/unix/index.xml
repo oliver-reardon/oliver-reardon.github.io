@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Unix on Oliver Reardon</title>
+    <link>//localhost:1313/tags/unix/</link>
+    <description>Recent content in Unix on Oliver Reardon</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 15 Dec 2022 02:36:49 -0400</lastBuildDate>
+    <atom:link href="//localhost:1313/tags/unix/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Unix Password Manager with Multiple Repos &#43; zsh Completion</title>
+      <link>//localhost:1313/posts/unix-password-manager-with-multiple-repos-plus-zsh-completion/</link>
+      <pubDate>Thu, 15 Dec 2022 02:36:49 -0400</pubDate>
+      <guid>//localhost:1313/posts/unix-password-manager-with-multiple-repos-plus-zsh-completion/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://www.passwordstore.org/&#34;&gt;&lt;strong&gt;Pass&lt;/strong&gt;&lt;/a&gt; is a brutally simple and effective CLI password manager for *nix systems. There are multiple front ends if you prefer not to rely on the CLI, and also a great iOS app that can sync your pass git repo – &lt;a href=&#34;https://mssun.github.io/passforios/&#34;&gt;passforios&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;I prefer to separate various project password stores into multiple repos, but pass does not cater for this natively. By default, it creates a single password store at &lt;code&gt;~/.password-store&lt;/code&gt;. To change that behavior and use an alternate location, you must modify an environment variable and define your new preferred location.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

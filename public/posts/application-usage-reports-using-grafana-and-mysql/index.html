@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  
+    <title>Application Usage Reports using Grafana and MySQL :: Oliver Reardon</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="How to visualize and analyze macOS application usage data from Jamf Pro using Grafana and MySQL." />
+<meta name="keywords" content="application usage, macOS, Jamf, Grafana, MySQL, reporting" />
+
+  <meta name="robots" content="noodp" />
+
+<link rel="canonical" href="//localhost:1313/posts/application-usage-reports-using-grafana-and-mysql/" />
+
+
+
+
+
+  
+  <link rel="stylesheet" href="//localhost:1313/css/buttons.min.86f6b4c106b6c6eb690ae5203d36b442c1f66f718ff4e8164fa86cf6c61ad641.css">
+
+  
+  <link rel="stylesheet" href="//localhost:1313/css/code.min.4f0ccc8439f99bf7f7970298556b94011aabc1fcae743b6842fc3361a2da9ea3.css">
+
+  
+  <link rel="stylesheet" href="//localhost:1313/css/fonts.min.5bb7ed13e1d00d8ff39ea84af26737007eb5051b157b86fc24487c94f3dc8bbe.css">
+
+  
+  <link rel="stylesheet" href="//localhost:1313/css/footer.min.eb8dfc2c6a7eafa36cd3ba92d63e69e849e2200e0002a228d137f236b09ecd75.css">
+
+  
+  <link rel="stylesheet" href="//localhost:1313/css/gist.min.a751e8b0abe1ba8bc53ced52a38b19d8950fe78ca29454ea8c2595cf26aad5c0.css">
+
+  
+  <link rel="stylesheet" href="//localhost:1313/css/header.min.75c7eb0e2872d95ff48109c6647d0223a38db52e2561dd87966eb5fc7c6bdac6.css">
+
+  
+  <link rel="stylesheet" href="//localhost:1313/css/main.min.15870410d15d02abd22fb5ef00996f65a00d04b3a7435e9f83831c7c2298de88.css">
+
+  
+  <link rel="stylesheet" href="//localhost:1313/css/menu.min.3c17467ebeb3d38663dce68f71f519901124fa5cbb4519b2fb0667a21e9aca39.css">
+
+  
+  <link rel="stylesheet" href="//localhost:1313/css/pagination.min.bbb986dbce00a5ce5aca0504b7925fc1c581992a4bf57f163e5d69cc1db7d836.css">
+
+  
+  <link rel="stylesheet" href="//localhost:1313/css/post.min.e6dddd258e64c83e05cec0cd49c05216742d42fc8ecbfbe6b67083412b609bd3.css">
+
+  
+  <link rel="stylesheet" href="//localhost:1313/css/syntax.min.a0773cce9310cb6d8ed23e50f005448facf29a53001b57e038828daa466b25c0.css">
+
+  
+  <link rel="stylesheet" href="//localhost:1313/css/terminal.min.e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css">
+
+  
+  <link rel="stylesheet" href="//localhost:1313/css/terms.min.b81791663c3790e738e571cdbf802312390d30e4b1d8dc9d814a5b5454d0ac11.css">
+
+
+
+
+
+
+
+<link rel="shortcut icon" href="//localhost:1313/favicon.png">
+<link rel="apple-touch-icon" href="//localhost:1313/apple-touch-icon.png">
+
+
+<meta name="twitter:card" content="summary" />
+
+  
+    <meta name="twitter:site" content="" />
+  
+    <meta name="twitter:creator" content="" />
+
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Application Usage Reports using Grafana and MySQL">
+<meta property="og:description" content="How to visualize and analyze macOS application usage data from Jamf Pro using Grafana and MySQL." />
+<meta property="og:url" content="//localhost:1313/posts/application-usage-reports-using-grafana-and-mysql/" />
+<meta property="og:site_name" content="Oliver Reardon" />
+
+  
+  
+  <meta property="og:image" content="//localhost:1313/">
+
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="627">
+
+
+  <meta property="article:published_time" content="2021-09-06 07:43:41 -0400 EDT" />
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body>
+
+
+<div class="container full">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="/">
+  <div class="logo">
+    Oliver Reardon
+  </div>
+</a>
+
+    </div>
+    
+      <ul class="menu menu--mobile">
+  <li class="menu__trigger">Menu&nbsp;▾</li>
+  <li>
+    <ul class="menu__dropdown">
+      
+        
+          <li><a href="/">Talent Profile</a></li>
+        
+      
+        
+          <li><a href="/posts">Posts</a></li>
+        
+      
+        
+          <li><a href="https://linkedin.com/in/oliver-reardon">LinkedIn</a></li>
+        
+      
+        
+          <li><a href="https://github.com/oliver-reardon">GitHub</a></li>
+        
+      
+      
+    </ul>
+  </li>
+</ul>
+
+    
+    
+  </div>
+  
+    <nav class="navigation-menu">
+  <ul class="navigation-menu__inner menu--desktop">
+    
+      
+        
+          <li><a href="/" >Talent Profile</a></li>
+        
+      
+        
+          <li><a href="/posts" >Posts</a></li>
+        
+      
+      
+        <li>
+          <ul class="menu">
+            <li class="menu__trigger">Show more&nbsp;▾</li>
+            <li>
+              <ul class="menu__dropdown">
+                
+                  
+                    <li><a href="https://linkedin.com/in/oliver-reardon" >LinkedIn</a></li>
+                  
+                
+                  
+                    <li><a href="https://github.com/oliver-reardon" >GitHub</a></li>
+                  
+                
+              </ul>
+            </li>
+          </ul>
+        </li>
+      
+    
+  </ul>
+</nav>
+
+  
+</header>
+
+
+  <div class="content">
+    
+<article class="post">
+  <h1 class="post-title">
+    <a href="//localhost:1313/posts/application-usage-reports-using-grafana-and-mysql/">Application Usage Reports using Grafana and MySQL</a>
+  </h1>
+  <div class="post-meta"><time class="post-date">2021-09-06</time><span class="post-author">Oliver Reardon</span><span class="post-reading-time">3 min read (535 words)</span></div>
+
+  
+    <span class="post-tags">
+      
+      #<a href="//localhost:1313/tags/jamf-pro/">Jamf Pro</a>&nbsp;
+      
+      #<a href="//localhost:1313/tags/macos/">macOS</a>&nbsp;
+      
+      #<a href="//localhost:1313/tags/grafana/">Grafana</a>&nbsp;
+      
+      #<a href="//localhost:1313/tags/mysql/">MySQL</a>&nbsp;
+      
+      #<a href="//localhost:1313/tags/reporting/">Reporting</a>&nbsp;
+      
+    </span>
+  
+  
+
+
+  
+
+  <div class="post-content"><div>
+        <p>Application usage data on macOS can easily be misinterpreted. Even the native Screen Time service does not do a great job determining which applications were truly ‘in use’ and for how long. More on this here: <a href="https://www.r-bloggers.com/2019/10/spelunking-macos-screentime-app-usage-with-r/">Spelunking macOS ScreenTime App Usage with R</a>.</p>
+<p>Please see my other blog post regarding the JamfDaemon and application usage collection: <a href="/posts/shallow-diving-macos-application-usage-logs/">Shallow Diving macOS Application Usage Logs with Jamf Pro</a>.</p>
+<p>Jamf Pro does have the ability to display application usage reports using the web app, however, there is no option (at the time of writing) to export usage reports, and manipulating or visualizing the data in a meaningful way is not really possible. Generating reports is slow as the database is queried heavily to populate the resulting data.</p>
+<p>The Jamf Pro Classic API includes a <a href="https://developer.jamf.com/jamf-pro/reference/computerapplicationusage"><code>computerapplicationusage</code></a> endpoint resource that can be utilized. This would mean iterating through each device record to collect application usage. It’s not the most efficient method, albeit the easiest. <a href="https://splunkbase.splunk.com/app/4729#/overview">Splunk</a> and <a href="https://marketplace.jamf.com/details/power-bi">Power BI</a> are both options to consider for making use of the Jamf Pro API, but as our organization was already using <a href="https://grafana.com/">Grafana</a>, it was worth investigating what could be done.</p>
+<p>Grafana works best with time series data but can also be used to evaluate table-based data and display a wide variety of visualizations.</p>
+<hr>
+<h2 id="data-accuracy">Data Accuracy<a href="#data-accuracy" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<p>The accuracy of the data collected by the <em>JamfDaemon</em> is close enough for what we need. If you are collecting data from devices with multiple full screen applications, multiple logged-in users, external displays, and remote sessions active, then your results may vary. For our organization’s needs, we really just required a holistic overview of app usage so we could compare, for example, Slack vs Microsoft Teams, and determine app popularity and trending over time.</p>
+<hr>
+<h2 id="application-query">Application Query<a href="#application-query" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<p>The following MySQL query joins the <code>application_usage_logs</code> table with the <code>application_details</code> table. This gives us a resulting table that includes <code>minutes_foreground</code> data and the corresponding application name (e.g., <code>Google Chrome.app</code>). I also used a Grafana variable to select the application I was interested in (<code>$browser_applications</code>).</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">SELECT</span><span class="w"> </span><span class="n">application_usage_logs</span><span class="p">.</span><span class="n">usage_date_epoch</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">time</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">       </span><span class="k">avg</span><span class="p">(</span><span class="n">application_usage_logs</span><span class="p">.</span><span class="n">minutes_foreground</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">chrome</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">FROM</span><span class="w"> </span><span class="n">application_details</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">INNER</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">application_usage_logs</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="k">ON</span><span class="w"> </span><span class="n">application_details</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">application_usage_logs</span><span class="p">.</span><span class="n">application_details_id</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">WHERE</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Google Chrome.app&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="k">AND</span><span class="w"> </span><span class="n">minutes_foreground</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="k">AND</span><span class="w"> </span><span class="n">minutes_foreground</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">1440</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="k">AND</span><span class="w"> </span><span class="s2">&#34;${browser_applications}&#34;</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="s1">&#39;%Google Chrome.app%&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">time</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">time</span><span class="w">
+</span></span></span></code></pre></div><figure><img src="/posts/application-usage-reports-using-grafana-and-mysql/application-usage-report-1.webp"
+    alt="Browser Usage Details – All Devices (30 days)"><figcaption>
+      <p>Browser Usage Details – All Devices (30 days)</p>
+    </figcaption>
+</figure>
+
+<p>It was necessary to use one query per application in order to display the time data all on one graph – so four browsers = four separate queries. The <code>$browser_applications</code> variable took care of only displaying usage of the browser selected in the variable drop-down selector.</p>
+<figure><img src="/posts/application-usage-reports-using-grafana-and-mysql/application-usage-report-2.webp"
+    alt="Browser Usage Details – All Devices (Chrome, 30 days)"><figcaption>
+      <p>Browser Usage Details – All Devices (Chrome, 30 days)</p>
+    </figcaption>
+</figure>
+
+<hr>
+<h2 id="per-device-usage-query">Per-Device Usage Query<a href="#per-device-usage-query" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<p>Visualizing application usage data on a per-device basis is also possible. Here is the query I developed for that:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">SELECT</span><span class="w"> </span><span class="n">usage_date_epoch</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">time_sec</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">       </span><span class="n">minutes_foreground</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">       </span><span class="n">computer_name</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">FROM</span><span class="w"> </span><span class="n">computers_denormalized</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">INNER</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">application_usage_logs</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="k">ON</span><span class="w"> </span><span class="n">computers_denormalized</span><span class="p">.</span><span class="n">computer_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">application_usage_logs</span><span class="p">.</span><span class="n">computer_id</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">INNER</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">application_details</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="k">ON</span><span class="w"> </span><span class="n">application_usage_logs</span><span class="p">.</span><span class="n">application_details_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">application_details</span><span class="p">.</span><span class="n">id</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">WHERE</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&#34;${application}&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="k">AND</span><span class="w"> </span><span class="n">computer_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="err">${</span><span class="n">device</span><span class="err">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="k">AND</span><span class="w"> </span><span class="n">minutes_foreground</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="k">AND</span><span class="w"> </span><span class="n">minutes_foreground</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">1440</span><span class="w">
+</span></span></span></code></pre></div><p>Again, using Grafana variables, I was able to select the application name and then a device name. This then displays the time series data for that</p>
+<figure><img src="/posts/application-usage-reports-using-grafana-and-mysql/application-usage-report-3.webp"
+    alt="Browser Usage Details – Single Device (Chrome, 30 days)"><figcaption>
+      <p>Browser Usage Details – Single Device (Chrome, 30 days)</p>
+    </figcaption>
+</figure>
+
+
+      </div></div>
+
+  
+
+  
+    
+
+  
+</article>
+
+  </div>
+
+  
+    <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright">
+        <span>© 2025 Powered by <a href="https://gohugo.io">Hugo</a></span>
+    
+      <span>:: <a href="https://github.com/panr/hugo-theme-terminal" target="_blank">Theme</a> made by <a href="https://github.com/panr" target="_blank">panr</a></span>
+      </div>
+  </div>
+</footer>
+
+
+
+
+
+
+<script type="text/javascript" src="/bundle.min.js"></script>
+
+
+
+
+
+  
+</div>
+
+</body>
+</html>
