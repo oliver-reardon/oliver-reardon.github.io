@@ -1,5 +1,5 @@
 ---
-title: "Oliver Reardon"
+title: "Talent Profile"
 description: "Proven expertise in event-driven automation, security hardening, and infrastructure as code with a focus on reliability, performance, and efficiency."
 date: 2025-03-19T00:00:00Z
 lastmod: 2025-03-19T00:00:00Z
@@ -17,16 +17,15 @@ Specializes in event-driven automation, security hardening, and compliance enfor
 Designs and deploys scalable, resilient systems optimized for reliability, performance, and efficiency.
 Experienced in incident management, observability, and infrastructure as code, with a strong focus on minimizing operational toil through automation and strategic design.
 
-📧 [oliver.reardon@gmail.com](mailto:oliver.reardon@gmail.com)  
-🔗 [LinkedIn](https://linkedin.com/in/oliver-reardon) | [Blog](https://isthisthingon.tech) | [GitHub](https://github.com/oliver-reardon)  
+🔗 [LinkedIn](https://linkedin.com/in/oliver-reardon) | [GitHub](https://github.com/oliver-reardon)  
 
 ---
 
 ## 🔧 Skills & Technologies  
 
-Python · Docker · AWS · macOS/Linux/Unix at scale · Azure · Terraform · Windows Server · CI/CD  
+Docker · AWS · Anisble · macOS/Linux/Unix/Chrome @ scale · Azure · Terraform · Windows Server · CI/CD · Python ·
 Git · API integrations · Jira · DevOps · Grafana · Splunk · Puppet · Scalr · MDM · PowerShell  
-Infrastructure as Code (IaC) · OSQuery · Serverless Framework · Bash/Zsh  
+Infrastructure as Code (IaC) · AI · OSQuery · Serverless Framework · Bash/Zsh  
 
 ---
 

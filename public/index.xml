@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Talent Profile on Oliver Reardon</title>
+    <link>//localhost:1313/</link>
+    <description>Recent content in Talent Profile on Oliver Reardon</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 23 Apr 2025 15:43:00 -0400</lastBuildDate>
+    <atom:link href="//localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>If your SSH config feels unmanageable, it probably is.</title>
+      <link>//localhost:1313/posts/if-your-ssh-config-feels-unmanageable-it-probably-is/</link>
+      <pubDate>Wed, 23 Apr 2025 15:43:00 -0400</pubDate>
+      <guid>//localhost:1313/posts/if-your-ssh-config-feels-unmanageable-it-probably-is/</guid>
+      <description>&lt;h1 id=&#34;why-a-modular-ssh-config&#34;&gt;Why a Modular SSH Config?&lt;/h1&gt;&#xA;&lt;p&gt;Managing SSH configuration can quickly become overwhelming as your environment grows. A single &lt;code&gt;~/.ssh/config&lt;/code&gt; file often turns into a tangled mix of work servers, personal machines, cloud hosts, and GitHub setups. Over time, this file accumulates dozens—sometimes hundreds—of entries, making it difficult to find what you need, spot errors, or safely share parts of your config. One misplaced line or typo can break connectivity for multiple hosts, and the lack of structure makes it risky to reuse or sync your config across devices. By adopting a modular approach—splitting your SSH configuration into focused, numbered files grouped by context—you gain clarity, maintainability, and the flexibility to share or update only the relevant sections. This method transforms SSH management from a fragile, monolithic file into a robust, organized system that scales with your needs.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Protecting FleetDM with AWS WAF</title>
+      <link>//localhost:1313/posts/protecting-fleetdm-with-aws-waf/</link>
+      <pubDate>Sun, 25 Aug 2024 13:16:10 -0400</pubDate>
+      <guid>//localhost:1313/posts/protecting-fleetdm-with-aws-waf/</guid>
+      <description>&lt;h1 id=&#34;protecting-fleetdm-with-aws-waf&#34;&gt;Protecting FleetDM with AWS WAF&lt;/h1&gt;&#xA;&lt;p&gt;The &lt;a href=&#34;https://fleetdm.com/docs/get-started/why-fleet?gad_source=1&#34;&gt;FleetDM&lt;/a&gt; web console presents a valuable interface for managing endpoints — and like any administrative UI, it benefits from being accessible only to trusted networks. This configuration uses AWS WAF to restrict direct access based on source IP address, ensuring that only traffic from defined locations is allowed to reach the console.&lt;/p&gt;&#xA;&lt;p&gt;The setup blocks all traffic by default and permits access only from trusted IP ranges, such as internal corporate networks and secure gateways used by managed browsers. While broader access policies are handled through a separate zero trust architecture, the WAF provides a clear network-layer boundary that limits exposure at the edge.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>OSQuery Results to Loki with Kinesis Data Stream</title>
+      <link>//localhost:1313/posts/osquery-results-to-loki-with-kinesis-data-stream/</link>
+      <pubDate>Thu, 19 Oct 2023 11:35:25 -0400</pubDate>
+      <guid>//localhost:1313/posts/osquery-results-to-loki-with-kinesis-data-stream/</guid>
+      <description>&lt;p&gt;Forwarding &lt;a href=&#34;https://www.osquery.io/&#34;&gt;osquery&lt;/a&gt; results to a log aggregator or SIEM requires enriching the JSON data payload to match the destination’s expected structure. &lt;a href=&#34;https://aws.amazon.com/kinesis/data-streams/&#34;&gt;AWS Kinesis Data Streams&lt;/a&gt; ingests data in real time, applies transformations using Lambda, and then delivers the enriched JSON payload to the downstream destination — in this case, &lt;a href=&#34;https://grafana.com/oss/loki/&#34;&gt;Grafana Loki&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;The osquery manager (&lt;a href=&#34;https://fleetdm.com/docs/get-started/why-fleet?gad_source=1&#34;&gt;FleetDM&lt;/a&gt;) runs as a container in AWS with the results plugin enabled by setting the environment variable &lt;code&gt;FLEET_OSQUERY_RESULT_LOG_PLUGIN&lt;/code&gt; to &lt;code&gt;kinesis&lt;/code&gt;. Additionally, defining &lt;code&gt;FLEET_KINESIS_RESULT_STREAM&lt;/code&gt; with the name of the Kinesis Data Stream, which, in the Terraform setup, is referenced as &lt;code&gt;aws_kinesis_stream.data_stream.name&lt;/code&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Mass Modify Computer Management Status In Jamf Pro</title>
+      <link>//localhost:1313/posts/set-computer-management-status-jamf-pro/</link>
+      <pubDate>Sun, 01 Oct 2023 12:56:06 -0400</pubDate>
+      <guid>//localhost:1313/posts/set-computer-management-status-jamf-pro/</guid>
+      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;Jamf removed the ability to mass action modify the management status for computers in 10.49.&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;p&gt;Modifying the management status of computers in Jamf Pro can still be useful for various asset management reasons. Expanding on the sentiment of &lt;a href=&#34;https://derflounder.wordpress.com/2023/08/15/updating-management-status-in-jamf-pro-computer-inventory-records-on-jamf-pro-10-49-0-and-later/&#34;&gt;Der Flounder&lt;/a&gt;, I created a simple Python tool to set the management status of Jamf Pro computer object(s) via the universal api. Rather than using a pre-defined static list - the tool uses an Advanced Computer Search to iterate over.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Jamf Pro Docker Container</title>
+      <link>//localhost:1313/posts/jamf-pro-docker-container/</link>
+      <pubDate>Sun, 22 Jan 2023 10:09:06 -0400</pubDate>
+      <guid>//localhost:1313/posts/jamf-pro-docker-container/</guid>
+      <description>&lt;p&gt;Setting up an additional Jamf Pro environment for development or testing can be time-consuming. Docker reduces this overhead and allows for fast and repeatable creation of a ready-to-use Jamf instance.&lt;/p&gt;&#xA;&lt;p&gt;Full build guide – &lt;a href=&#34;https://github.com/1sth1sth1ng0n/jamfpro_cont&#34;&gt;https://github.com/1sth1sth1ng0n/jamfpro_cont&lt;/a&gt;&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;The following Docker base image is used along with the latest Jamf Pro Java collection (&lt;code&gt;ROOT.war&lt;/code&gt;):&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Docker image&lt;/strong&gt;: &lt;a href=&#34;https://hub.docker.com/r/jamf/jamfpro&#34;&gt;jamf/jamfpro on Docker Hub&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Java collection&lt;/strong&gt;: Available from a licensed Jamf Account – &lt;a href=&#34;https://account.jamf.com/&#34;&gt;Jamf Account&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;Once the new image is built, it can be run directly via &lt;code&gt;docker run&lt;/code&gt;, or more ideally, managed with &lt;strong&gt;Docker Compose&lt;/strong&gt;. Docker compose allows for a more structured approach where defining the database parameters and networks are more clear.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Unix Password Manager with Multiple Repos &#43; zsh Completion</title>
+      <link>//localhost:1313/posts/unix-password-manager-with-multiple-repos-plus-zsh-completion/</link>
+      <pubDate>Thu, 15 Dec 2022 02:36:49 -0400</pubDate>
+      <guid>//localhost:1313/posts/unix-password-manager-with-multiple-repos-plus-zsh-completion/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://www.passwordstore.org/&#34;&gt;&lt;strong&gt;Pass&lt;/strong&gt;&lt;/a&gt; is a brutally simple and effective CLI password manager for *nix systems. There are multiple front ends if you prefer not to rely on the CLI, and also a great iOS app that can sync your pass git repo – &lt;a href=&#34;https://mssun.github.io/passforios/&#34;&gt;passforios&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;I prefer to separate various project password stores into multiple repos, but pass does not cater for this natively. By default, it creates a single password store at &lt;code&gt;~/.password-store&lt;/code&gt;. To change that behavior and use an alternate location, you must modify an environment variable and define your new preferred location.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Application Usage Reports using Grafana and MySQL</title>
+      <link>//localhost:1313/posts/application-usage-reports-using-grafana-and-mysql/</link>
+      <pubDate>Mon, 06 Sep 2021 07:43:41 -0400</pubDate>
+      <guid>//localhost:1313/posts/application-usage-reports-using-grafana-and-mysql/</guid>
+      <description>&lt;p&gt;Application usage data on macOS can easily be misinterpreted. Even the native Screen Time service does not do a great job determining which applications were truly ‘in use’ and for how long. More on this here: &lt;a href=&#34;https://www.r-bloggers.com/2019/10/spelunking-macos-screentime-app-usage-with-r/&#34;&gt;Spelunking macOS ScreenTime App Usage with R&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;Please see my other blog post regarding the JamfDaemon and application usage collection: &lt;a href=&#34;//localhost:1313/posts/shallow-diving-macos-application-usage-logs/&#34;&gt;Shallow Diving macOS Application Usage Logs with Jamf Pro&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;Jamf Pro does have the ability to display application usage reports using the web app, however, there is no option (at the time of writing) to export usage reports, and manipulating or visualizing the data in a meaningful way is not really possible. Generating reports is slow as the database is queried heavily to populate the resulting data.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Shallow Diving macOS Application Usage Logs with Jamf Pro</title>
+      <link>//localhost:1313/posts/shallow-diving-macos-application-usage-logs/</link>
+      <pubDate>Wed, 01 Sep 2021 06:25:56 -0400</pubDate>
+      <guid>//localhost:1313/posts/shallow-diving-macos-application-usage-logs/</guid>
+      <description>&lt;p&gt;Application usage data on macOS can easily be misinterpreted. Even the native Screen Time service does not do a great job determining which applications were truly ‘in use’ and for how long.&lt;br&gt;&#xA;More on this here: &lt;a href=&#34;https://www.r-bloggers.com/2019/10/spelunking-macos-screentime-app-usage-with-r/&#34;&gt;Spelunking macOS ScreenTime App Usage with R&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;With that said, let’s take a quick review of how the macOS Jamf Pro framework collects application usage logs.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;log-collection&#34;&gt;Log Collection&lt;/h2&gt;&#xA;&lt;p&gt;One of the &lt;code&gt;JamfDaemon&lt;/code&gt;&amp;rsquo;s primary responsibilities is monitoring application usage events and capturing statistics.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

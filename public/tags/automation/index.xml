@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Automation on Oliver Reardon</title>
+    <link>//localhost:1313/tags/automation/</link>
+    <description>Recent content in Automation on Oliver Reardon</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 01 Oct 2023 12:56:06 -0400</lastBuildDate>
+    <atom:link href="//localhost:1313/tags/automation/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Mass Modify Computer Management Status In Jamf Pro</title>
+      <link>//localhost:1313/posts/set-computer-management-status-jamf-pro/</link>
+      <pubDate>Sun, 01 Oct 2023 12:56:06 -0400</pubDate>
+      <guid>//localhost:1313/posts/set-computer-management-status-jamf-pro/</guid>
+      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;Jamf removed the ability to mass action modify the management status for computers in 10.49.&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;p&gt;Modifying the management status of computers in Jamf Pro can still be useful for various asset management reasons. Expanding on the sentiment of &lt;a href=&#34;https://derflounder.wordpress.com/2023/08/15/updating-management-status-in-jamf-pro-computer-inventory-records-on-jamf-pro-10-49-0-and-later/&#34;&gt;Der Flounder&lt;/a&gt;, I created a simple Python tool to set the management status of Jamf Pro computer object(s) via the universal api. Rather than using a pre-defined static list - the tool uses an Advanced Computer Search to iterate over.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

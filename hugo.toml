@@ -1,12 +1,21 @@
 baseURL = '/'
 languageCode = 'en-us'
-title = 'Oliver Reardon - Talent Profile'
+title = 'Oliver Reardon'
 theme = 'terminal'
 pagination.pagerSize = 5
 
-# Required for Chroma and the custom syntax highlighting.
-[markup.highlight]
-  noClasses = false
+## Required for Chroma and the custom syntax highlighting.
+#[markup.highlight]
+#  noClasses = false
+
+[markup]
+  ## Required for Chroma and the custom syntax highlighting.
+  [markup.highlight]
+    noClasses = false
+  # Required for html rendering of Markdown.
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
 
 [params]
   # dir name of your main content (default is `content/posts`).
@@ -14,7 +23,7 @@ pagination.pagerSize = 5
   contentTypeName = "content"
 
   # if you set this to 0, only submenu trigger will be visible
-  showMenuItems = 0
+  showMenuItems = 2
 
   # show selector to switch language
   showLanguageSelector = false
@@ -73,7 +82,7 @@ pagination.pagerSize = 5
 [languages]
   [languages.en]
     languageName = "English"
-    title = "Oliver Reardon - Talent Profile"
+    title = "Oliver Reardon"
 
     [languages.en.params]
       subtitle = "Talent Profile and Resume"
@@ -91,23 +100,27 @@ pagination.pagerSize = 5
       words = "words"
 
       [languages.en.params.logo]
-        logoText = "Talent Profile"
+        logoText = "Oliver Reardon"
         logoHomeLink = "/"
 
-      #[languages.en.menu]
-      #  [[languages.en.menu.main]]
-      #    identifier = "posts"
-      #    name = "Posts"
-      #    url = "/posts"
-      #  [[languages.en.menu.main]]
-      #    identifier = "resume"
-      #    name = "Resume"
-      #    url = "/resume"
-
-[module]
-  # In case you would like to make changes to the theme and keep it locally in you repository,
-  # uncomment the line below (and correct the local path if necessary).
-  # --
-  #replacements = "github.com/panr/hugo-theme-terminal/v4 -> themes/terminal"
-[[module.imports]]
-  #path = 'github.com/panr/hugo-theme-terminal/v4'
+      [languages.en.menu]
+        [[languages.en.menu.main]]
+          identifier = "resume"
+          name = "Talent Profile"
+          url = "/"
+          weight = 1
+        [[languages.en.menu.main]]
+          identifier = "posts"
+          name = "Posts"
+          url = "/posts"
+          weight = 2
+        [[languages.en.menu.main]]
+          identifier = "linkedin"
+          name = "LinkedIn"
+          url = "https://linkedin.com/in/oliver-reardon"
+          weight = 3
+        [[languages.en.menu.main]]
+          identifier = "github"
+          name = "GitHub"
+          url = "https://github.com/oliver-reardon"
+          weight = 4

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Jamf Pro on Oliver Reardon</title>
+    <link>//localhost:1313/tags/jamf-pro/</link>
+    <description>Recent content in Jamf Pro on Oliver Reardon</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 01 Oct 2023 12:56:06 -0400</lastBuildDate>
+    <atom:link href="//localhost:1313/tags/jamf-pro/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Mass Modify Computer Management Status In Jamf Pro</title>
+      <link>//localhost:1313/posts/set-computer-management-status-jamf-pro/</link>
+      <pubDate>Sun, 01 Oct 2023 12:56:06 -0400</pubDate>
+      <guid>//localhost:1313/posts/set-computer-management-status-jamf-pro/</guid>
+      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;Jamf removed the ability to mass action modify the management status for computers in 10.49.&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;p&gt;Modifying the management status of computers in Jamf Pro can still be useful for various asset management reasons. Expanding on the sentiment of &lt;a href=&#34;https://derflounder.wordpress.com/2023/08/15/updating-management-status-in-jamf-pro-computer-inventory-records-on-jamf-pro-10-49-0-and-later/&#34;&gt;Der Flounder&lt;/a&gt;, I created a simple Python tool to set the management status of Jamf Pro computer object(s) via the universal api. Rather than using a pre-defined static list - the tool uses an Advanced Computer Search to iterate over.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Application Usage Reports using Grafana and MySQL</title>
+      <link>//localhost:1313/posts/application-usage-reports-using-grafana-and-mysql/</link>
+      <pubDate>Mon, 06 Sep 2021 07:43:41 -0400</pubDate>
+      <guid>//localhost:1313/posts/application-usage-reports-using-grafana-and-mysql/</guid>
+      <description>&lt;p&gt;Application usage data on macOS can easily be misinterpreted. Even the native Screen Time service does not do a great job determining which applications were truly ‘in use’ and for how long. More on this here: &lt;a href=&#34;https://www.r-bloggers.com/2019/10/spelunking-macos-screentime-app-usage-with-r/&#34;&gt;Spelunking macOS ScreenTime App Usage with R&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;Please see my other blog post regarding the JamfDaemon and application usage collection: &lt;a href=&#34;//localhost:1313/posts/shallow-diving-macos-application-usage-logs/&#34;&gt;Shallow Diving macOS Application Usage Logs with Jamf Pro&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;Jamf Pro does have the ability to display application usage reports using the web app, however, there is no option (at the time of writing) to export usage reports, and manipulating or visualizing the data in a meaningful way is not really possible. Generating reports is slow as the database is queried heavily to populate the resulting data.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Shallow Diving macOS Application Usage Logs with Jamf Pro</title>
+      <link>//localhost:1313/posts/shallow-diving-macos-application-usage-logs/</link>
+      <pubDate>Wed, 01 Sep 2021 06:25:56 -0400</pubDate>
+      <guid>//localhost:1313/posts/shallow-diving-macos-application-usage-logs/</guid>
+      <description>&lt;p&gt;Application usage data on macOS can easily be misinterpreted. Even the native Screen Time service does not do a great job determining which applications were truly ‘in use’ and for how long.&lt;br&gt;&#xA;More on this here: &lt;a href=&#34;https://www.r-bloggers.com/2019/10/spelunking-macos-screentime-app-usage-with-r/&#34;&gt;Spelunking macOS ScreenTime App Usage with R&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;With that said, let’s take a quick review of how the macOS Jamf Pro framework collects application usage logs.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;log-collection&#34;&gt;Log Collection&lt;/h2&gt;&#xA;&lt;p&gt;One of the &lt;code&gt;JamfDaemon&lt;/code&gt;&amp;rsquo;s primary responsibilities is monitoring application usage events and capturing statistics.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
