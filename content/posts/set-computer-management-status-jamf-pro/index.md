@@ -19,7 +19,7 @@ Modifying the management status of computers in Jamf Pro can still be useful for
 
 Here's an example of `sms-cli` modifying the management status of 3 computers.
 
-```bash
+```text
 $ python ./sms-cli.py --url=https://company.jamfcloud.com --username=user --managed --id=156 --password='pass'
 Are you sure you want to change the management status for the device(s)? [y/N]: y
 [SMS-CLI] Using search ID: Computers - Test Group
