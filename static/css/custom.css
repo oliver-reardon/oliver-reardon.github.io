@@ -1,7 +1,0 @@
-/* Normalize font for code blocks */
-pre, code, pre code, .highlight {
-  font-family: Menlo, Monaco, "Courier New", monospace;
-  font-size: 0.95rem;
-  line-height: 1.5;
-  -webkit-text-size-adjust: none; /* Prevent font scaling on iOS */
-}
