@@ -89,8 +89,8 @@ An additional [`Makefile`](https://github.com/oliver-reardon/terraform-scaffold-
 ```bash
 .PHONY: help docs fmt
 
-PATH ?= terraform
-p ?= $(PATH)
+TFPATH ?= terraform
+p ?= $(TFPATH)
 
 help: ## Show this help
 	@echo "Terraform Documentation Generator"
