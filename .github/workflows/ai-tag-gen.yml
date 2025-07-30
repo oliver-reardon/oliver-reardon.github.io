@@ -6,9 +6,8 @@ on:
       - 'content/posts/**/*.md'
     types: [opened, synchronize]
 
-# Add these permissions
 permissions:
-  contents: read
+  contents: write  # Changed from 'read' to 'write'
   pull-requests: write
   issues: write
 
@@ -21,6 +20,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
+          token: ${{ secrets.GITHUB_TOKEN }}
           fetch-depth: 0
           
       - name: Get changed files
@@ -36,25 +36,35 @@ jobs:
           
       - name: Install dependencies
         run: |
-          pip install openai pyyaml python-frontmatter
+          pip install "openai>=1.0.0" pyyaml python-frontmatter
           
-      - name: Generate AI suggestions
+      - name: Generate and apply AI suggestions
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         run: |
           python .github/scripts/generate_frontmatter.py "${{ steps.changed-files.outputs.all_changed_files }}"
           
-      - name: Comment PR with suggestions
+      - name: Commit AI changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "AI Front Matter Bot"
+          git add .
+          if ! git diff --cached --quiet; then
+            git commit -m "🤖 Add AI-generated tags and keywords"
+            git push
+          fi
+          
+      - name: Comment PR with summary
         uses: actions/github-script@v7
         with:
           script: |
             const fs = require('fs');
-            if (fs.existsSync('ai-suggestions.md')) {
-              const suggestions = fs.readFileSync('ai-suggestions.md', 'utf8');
+            if (fs.existsSync('ai-summary.md')) {
+              const summary = fs.readFileSync('ai-summary.md', 'utf8');
               github.rest.issues.createComment({
                 issue_number: context.issue.number,
                 owner: context.repo.owner,
                 repo: context.repo.repo,
-                body: suggestions
+                body: summary
               });
             }

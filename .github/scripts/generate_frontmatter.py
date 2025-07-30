@@ -1,85 +1,90 @@
-from openai import OpenAI  # Changed from: import openai
+from openai import OpenAI
 import frontmatter
 import sys
 import os
+import yaml
 
-def generate_suggestions(file_path):
+def generate_and_apply_suggestions(file_path):
     """
-    Analyze a Hugo blog post and generate AI-powered front matter suggestions.
-    
-    Args:
-        file_path (str): Path to the markdown file to analyze
-        
-    Returns:
-        str: YAML-formatted suggestions for tags and keywords
+    Generate AI suggestions and apply them directly to the file's front matter.
     """
     # Load the markdown file with front matter parsing
     with open(file_path, 'r') as f:
         post = frontmatter.load(f)
     
-    # Extract the first 2000 characters of content to stay within API limits
+    # Skip if tags and keywords already exist
+    if post.metadata.get('tags') and post.metadata.get('keywords'):
+        print(f"⏭️  Skipping {file_path} - already has tags and keywords")
+        return f"Skipped {file_path} - already has tags and keywords"
+    
+    # Extract content and title
     content = post.content[:2000]  
-    # Get the title from existing front matter, default to 'Untitled'
     title = post.metadata.get('title', 'Untitled')
     
-    # Construct the AI prompt with specific instructions
+    # Construct the AI prompt
     prompt = f"""
     Analyze this Hugo blog post and suggest relevant tags and keywords.
     
     Title: {title}
     Content: {content}
     
-    Return YAML format with:
-    - tags: 5-8 technical tags
-    - keywords: 8-12 relevant keywords
+    Return ONLY a valid YAML structure with:
+    tags: [3-5 technical tags, lowercase, single words, use hyphens for compound terms]
+    keywords: [4-6 relevant keywords, lowercase, maximum 2 words each]
     
-    Focus on: technology, tools, programming languages, frameworks, concepts mentioned.
+    Example format:
+    tags: ["aws", "terraform", "automation", "cloud-storage"]
+    keywords: ["proxy server", "browser configuration", "cloud hosting"]
     """
     
-    # NEW: Create client instance
-    client = OpenAI()  # Uses OPENAI_API_KEY environment variable automatically
-    
-    # NEW: Updated API call syntax
-    response = client.chat.completions.create(
-        model="gpt-3.5-turbo",
-        messages=[{"role": "user", "content": prompt}],
-        temperature=0.3  # Low temperature for more consistent/focused responses
-    )
-    
-    # Return the AI-generated suggestions
-    return response.choices[0].message.content
+    try:
+        # Generate AI suggestions
+        client = OpenAI()
+        response = client.chat.completions.create(
+            model="gpt-3.5-turbo",
+            messages=[{"role": "user", "content": prompt}],
+            temperature=0.3
+        )
+        
+        # Parse the AI response as YAML
+        ai_response = response.choices[0].message.content.strip()
+        suggestions = yaml.safe_load(ai_response)
+        
+        # Apply suggestions to front matter
+        if 'tags' in suggestions:
+            post.metadata['tags'] = suggestions['tags']
+        if 'keywords' in suggestions:
+            post.metadata['keywords'] = suggestions['keywords']
+        
+        # Write back to file
+        with open(file_path, 'w') as f:
+            f.write(frontmatter.dumps(post))
+        
+        return f"✅ Applied AI suggestions to {file_path}"
+        
+    except Exception as e:
+        return f"Error processing {file_path}: {str(e)}"
 
 def main():
     """
-    Main function that processes command line arguments and generates suggestions
-    for all changed markdown files in the content/posts directory.
+    Process all changed files and apply AI-generated front matter.
     """
-    # Check if file paths were provided as command line arguments
     if len(sys.argv) < 2:
         return
         
-    # Parse the space-separated file paths from command line argument
     files = sys.argv[1].split()
-    # Initialize the markdown output with header
-    suggestions_md = "## 🤖 AI Front Matter Suggestions\n\n"
+    results = []
     
-    # Process each file that was changed in the PR
     for file_path in files:
-        # Only process markdown files in the content/posts directory
         if file_path.endswith('.md') and 'content/posts' in file_path:
-            try:
-                # Generate AI suggestions for this specific file
-                suggestion = generate_suggestions(file_path)
-                # Add the suggestions to the markdown output with file header
-                suggestions_md += f"### {file_path}\n\n```yaml\n{suggestion}\n```\n\n"
-            except Exception as e:
-                # Handle errors gracefully and include them in the output
-                suggestions_md += f"### {file_path}\n\nError generating suggestions: {str(e)}\n\n"
+            result = generate_and_apply_suggestions(file_path)
+            results.append(result)
+            print(result)
     
-    # Write the complete suggestions to a file that GitHub Actions can read
-    with open('ai-suggestions.md', 'w') as f:
-        f.write(suggestions_md)
+    # Write summary for GitHub comment
+    summary = "## AI Front Matter Applied\n\n" + "\n".join([f"- {r}" for r in results])
+    with open('ai-summary.md', 'w') as f:
+        f.write(summary)
 
-# Entry point when script is run directly
 if __name__ == "__main__":
     main()
