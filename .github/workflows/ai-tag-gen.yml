@@ -51,7 +51,7 @@ jobs:
           git config --local user.name "AI Front Matter Bot"
           git add .
           if ! git diff --cached --quiet; then
-            git commit -m "🤖 Add AI-generated tags and keywords"
+            git commit -m "Add AI-generated tags and keywords"
             git push origin ${{ github.head_ref }}  # Push to the PR branch explicitly
           fi
           

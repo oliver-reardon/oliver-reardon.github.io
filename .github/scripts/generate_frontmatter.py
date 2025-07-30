@@ -8,13 +8,18 @@ def generate_and_apply_suggestions(file_path):
     """
     Generate AI suggestions and apply them directly to the file's front matter.
     """
-    # Load the markdown file with front matter parsing
+    # Load the markdown file with TOML front matter parsing
     with open(file_path, 'r') as f:
-        post = frontmatter.load(f)
+        post = frontmatter.load(f, handler=frontmatter.TOMLHandler())  # Specify TOML handler
     
-    # Skip if tags and keywords already exist
-    if post.metadata.get('tags') and post.metadata.get('keywords'):
-        print(f"Skipping {file_path} - already has tags and keywords")
+    # Skip if tags and keywords already exist and are not empty
+    existing_tags = post.metadata.get('tags', [])
+    existing_keywords = post.metadata.get('keywords', [])
+    
+    # Check if tags/keywords exist and are not just empty strings
+    if (existing_tags and existing_tags != ["", ""] and 
+        existing_keywords and existing_keywords != ["", ""]):
+        print(f"Skipping {file_path} - already has populated tags and keywords")
         return f"Skipped {file_path} - already has tags and keywords"
     
     # Extract content and title
@@ -56,11 +61,11 @@ def generate_and_apply_suggestions(file_path):
         if 'keywords' in suggestions:
             post.metadata['keywords'] = suggestions['keywords']
         
-        # Write back to file
+        # Write back to file with TOML format
         with open(file_path, 'w') as f:
-            f.write(frontmatter.dumps(post))
+            f.write(frontmatter.dumps(post, handler=frontmatter.TOMLHandler()))  # Use TOML handler
         
-        return f" Applied AI suggestions to {file_path}"
+        return f"Applied AI suggestions to {file_path}"
         
     except Exception as e:
         return f"Error processing {file_path}: {str(e)}"
