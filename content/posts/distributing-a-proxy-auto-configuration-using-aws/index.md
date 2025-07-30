@@ -1,6 +1,6 @@
 +++
 title = "Distributing a Proxy Auto-Configuration (PAC) file using AWS services"
-date = "2025-07-21T18:57:54-04:00"
+date = "2025-07-20T18:57:54-04:00"
 #dateFormat = "2006-01-02" # This value can be configured for per-post date formatting
 author = "Oliver Reardon"
 authorTwitter = "" #do not include @
