@@ -1,6 +1,6 @@
 +++
 title = "Terraform Scaffold Generator"
-date = "2025-07-27T19:33:15-04:00"
+date = "2024-11-27T19:33:15-04:00"
 #dateFormat = "2006-01-02" # This value can be configured for per-post date formatting
 author = "Oliver Reardon"
 authorTwitter = "" #do not include @
