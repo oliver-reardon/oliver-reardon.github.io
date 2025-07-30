@@ -1,4 +1,4 @@
-import openai
+from openai import OpenAI  # Changed from: import openai
 import frontmatter
 import sys
 import os
@@ -36,8 +36,11 @@ def generate_suggestions(file_path):
     Focus on: technology, tools, programming languages, frameworks, concepts mentioned.
     """
     
-    # Call OpenAI API with the constructed prompt
-    response = openai.ChatCompletion.create(
+    # NEW: Create client instance
+    client = OpenAI()  # Uses OPENAI_API_KEY environment variable automatically
+    
+    # NEW: Updated API call syntax
+    response = client.chat.completions.create(
         model="gpt-3.5-turbo",
         messages=[{"role": "user", "content": prompt}],
         temperature=0.3  # Low temperature for more consistent/focused responses

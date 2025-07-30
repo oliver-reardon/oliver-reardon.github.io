@@ -6,6 +6,12 @@ on:
       - 'content/posts/**/*.md'
     types: [opened, synchronize]
 
+# Add these permissions
+permissions:
+  contents: read
+  pull-requests: write
+  issues: write
+
 jobs:
   generate-frontmatter:
     runs-on: ubuntu-latest
