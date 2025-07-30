@@ -14,7 +14,7 @@ def generate_and_apply_suggestions(file_path):
     
     # Skip if tags and keywords already exist
     if post.metadata.get('tags') and post.metadata.get('keywords'):
-        print(f"⏭️  Skipping {file_path} - already has tags and keywords")
+        print(f"Skipping {file_path} - already has tags and keywords")
         return f"Skipped {file_path} - already has tags and keywords"
     
     # Extract content and title
@@ -60,7 +60,7 @@ def generate_and_apply_suggestions(file_path):
         with open(file_path, 'w') as f:
             f.write(frontmatter.dumps(post))
         
-        return f"✅ Applied AI suggestions to {file_path}"
+        return f" Applied AI suggestions to {file_path}"
         
     except Exception as e:
         return f"Error processing {file_path}: {str(e)}"
