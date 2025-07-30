@@ -1,6 +1,6 @@
 +++
 title = "If your SSH config feels unmanageable, it probably is"
-date = "2025-04-23T15:43:00-04:00"
+date = "2025-05-23T15:43:00-04:00"
 #dateFormat = "2006-01-02" # This value can be configured for per-post date formatting
 author = "Oliver Reardon"
 authorTwitter = "" #do not include @
