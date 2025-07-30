@@ -1,3 +1,7 @@
+---
+{}
+---
+
 +++
 title = "Distributing a Proxy Auto-Configuration (PAC) file using AWS services"
 date = "2025-07-20T18:57:54-04:00"
