@@ -7,7 +7,7 @@ on:
     types: [opened, synchronize]
 
 permissions:
-  contents: write  # Changed from 'read' to 'write'
+  contents: write
   pull-requests: write
   issues: write
 
@@ -17,10 +17,11 @@ jobs:
     if: github.event.pull_request.draft == false
     
     steps:
-      - name: Checkout
+      - name: Checkout PR branch
         uses: actions/checkout@v4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
+          ref: ${{ github.head_ref }}  # This checks out the actual PR branch
           fetch-depth: 0
           
       - name: Get changed files
@@ -51,7 +52,7 @@ jobs:
           git add .
           if ! git diff --cached --quiet; then
             git commit -m "🤖 Add AI-generated tags and keywords"
-            git push
+            git push origin ${{ github.head_ref }}  # Push to the PR branch explicitly
           fi
           
       - name: Comment PR with summary
