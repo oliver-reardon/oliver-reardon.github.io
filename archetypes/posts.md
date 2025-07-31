@@ -1,10 +1,10 @@
 ---
-title: "{{ replace .File.ContentBaseName "-" " " | title }}"
+title: {{ replace .File.ContentBaseName "-" " " | title }}
 date: {{ .Date }}
-author: "Oliver Reardon"
+author: Oliver Reardon
 tags: []
 keywords: []
-description: ""
+description:
 showFullContent: false
 readingTime: true
 hideComments: true
