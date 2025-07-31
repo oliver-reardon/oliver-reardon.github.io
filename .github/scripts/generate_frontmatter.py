@@ -7,7 +7,7 @@ import argparse
 
 def generate_and_apply_suggestions(file_path, force=False):
     """
-    Generate AI suggestions and apply them directly to the file's YAML front matter
+    Generate AI suggestions and apply them directly to the file's YAML front matter.
     """
     # Load the markdown file with YAML front matter
     with open(file_path, 'r') as f:

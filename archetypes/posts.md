@@ -7,5 +7,5 @@ keywords: []
 description:
 showFullContent: false
 readingTime: true
-hideComments: true
+hideComments: false
 ---
