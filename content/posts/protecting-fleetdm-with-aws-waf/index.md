@@ -1,17 +1,26 @@
-+++
-title = "Protecting FleetDM with AWS WAF"
-date = "2024-08-25T13:16:10-04:00"
-#dateFormat = "2006-01-02" # This value can be configured for per-post date formatting
-author = "Oliver Reardon"
-authorTwitter = "" #do not include @
-cover = ""
-tags = ["FleetDM", "AWS WAF", "security", "terraform", "cloud"]
-keywords = ["FleetDM", "AWS WAF", "web security", "IP restriction", "terraform", "cloud", "osquery"]
-description = "How to secure the FleetDM web console using AWS WAF, IP restrictions, and Terraform automation."
-showFullContent = false
-readingTime = true
-hideComments = false
-+++
+---
+title: Protecting FleetDM with AWS WAF
+date: 2024-08-25T13:16:10-04:00
+author: Oliver Reardon
+tags: 
+  - fleetdm
+  - aws-waf
+  - security
+  - terraform
+  - cloud
+keywords: 
+  - fleetdm
+  - aws waf
+  - web security
+  - ip restriction
+  - terraform
+  - cloud
+  - osquery
+description: How to secure the FleetDM web console using AWS WAF, IP restrictions, and Terraform automation.
+showFullContent: false
+readingTime: true
+hideComments: false
+---
 
 # Protecting FleetDM with AWS WAF
 

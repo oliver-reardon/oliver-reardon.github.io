@@ -1,17 +1,22 @@
-+++
-title = "Terraform Scaffold Generator"
-date = "2024-11-27T19:33:15-04:00"
-#dateFormat = "2006-01-02" # This value can be configured for per-post date formatting
-author = "Oliver Reardon"
-authorTwitter = "" #do not include @
-cover = ""
-tags = ["terraform", "makefile", "automation", "infrastructure"]
-keywords = ["terraform", "makefile", "project generator", "infrastructure as code", "automation", "scaffolding"]
-description = "A lightweight Makefile-based tool for generating consistent Terraform project structures with organizational standards and best practices."
-showFullContent = false
-readingTime = true
-hideComments = false
-+++
+---
+title: Terraform Scaffold Generator
+date: 2024-11-27T19:33:15-04:00
+author: Oliver Reardon
+tags:
+  - terraform
+  - infrastructure-as-code
+  - project-scaffolding
+  - makefile
+keywords:
+  - terraform projects
+  - infrastructure automation
+  - terraform generator
+  - project structure
+description: A lightweight Makefile-based tool for generating consistent Terraform project structures with organizational standards and best practices.
+showFullContent: false
+readingTime: true
+hideComments: false
+---
 
 I was looking for a repeatable, consistent way to generate Terraform project structures that aligned with internal organizational standards. The idea was to make it easy to spin up new infrastructure projects without reinventing the wheel each time.
 
@@ -145,6 +150,3 @@ The generated `README.md` will contain:
 ### Conclusion
 
 This Terraform scaffold generator solves the common problem of inconsistent project structures across teams. By standardizing the initial setup, you reduce cognitive load, improve code quality, and make it easier for team members to work across different infrastructure projects. The Makefile approach keeps things simple while providing powerful automation for both project generation and ongoing maintenance.
-
-
-

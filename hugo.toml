@@ -23,7 +23,7 @@ pagination.pagerSize = 5
   contentTypeName = "content"
 
   # if you set this to 0, only submenu trigger will be visible
-  showMenuItems = 2
+  showMenuItems = 3
 
   # show selector to switch language
   showLanguageSelector = false
@@ -115,12 +115,17 @@ pagination.pagerSize = 5
           url = "/posts"
           weight = 2
         [[languages.en.menu.main]]
+          identifier = "tags"
+          name = "Tags"
+          url = "/tags"
+          weight = 3
+        [[languages.en.menu.main]]
           identifier = "linkedin"
           name = "LinkedIn"
           url = "https://linkedin.com/in/oliver-reardon"
-          weight = 3
+          weight = 4
         [[languages.en.menu.main]]
           identifier = "github"
           name = "GitHub"
           url = "https://github.com/oliver-reardon"
-          weight = 4
+          weight = 5

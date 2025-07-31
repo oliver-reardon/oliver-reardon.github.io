@@ -1,18 +1,23 @@
-+++
-title = "Unix Password Manager with Multiple Repos + zsh Completion"
-date = "2022-12-15T02:36:49-04:00"
-#dateFormat = "2006-01-02" # This value can be configured for per-post date formatting
-author = "Oliver Reardon"
-authorTwitter = "" #do not include @
-cover = ""
-tags = ["password manager", "unix", "zsh", "cli", "pass"]
-keywords = ["password manager", "multiple repos", "zsh completion", "cli", "pass"]
-description = "How to use the pass CLI password manager with multiple repositories and enable zsh completion for each."
-showFullContent = false
-readingTime = true
-hideComments = false
-+++
-
+---
+title: Unix Password Manager with Multiple Repos + zsh Completion
+date: 2022-12-15 02:36:49-04:00
+author: Oliver Reardon
+tags:
+  - unix
+  - password-manager
+  - zsh-completion
+  - cli
+  - git-repo
+keywords:
+  - multiple repos
+  - environment variable
+  - password store
+  - auto-completion
+description: How to use the pass CLI password manager with multiple repositories and enable zsh completion for each.
+showFullContent: false
+readingTime: true
+hideComments: false
+---
 [**Pass**](https://www.passwordstore.org/) is a brutally simple and effective CLI password manager for *nix systems. There are multiple front ends if you prefer not to rely on the CLI, and also a great iOS app that can sync your pass git repo – [passforios](https://mssun.github.io/passforios/).
 
 I prefer to separate various project password stores into multiple repos, but pass does not cater for this natively. By default, it creates a single password store at `~/.password-store`. To change that behavior and use an alternate location, you must modify an environment variable and define your new preferred location.
@@ -102,3 +107,4 @@ TA`[{1sp{E6f-|q
 
 $ pass_two 
 Password Store
+```

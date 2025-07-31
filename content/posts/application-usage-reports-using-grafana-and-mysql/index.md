@@ -1,17 +1,25 @@
-+++
-title = "Application Usage Reports using Grafana and MySQL"
-date = "2021-09-06T07:43:41-04:00"
-#dateFormat = "2006-01-02" # This value can be configured for per-post date formatting
-author = "Oliver Reardon"
-authorTwitter = "" # do not include @
-cover = ""
-tags = ["Jamf Pro", "macOS", "Grafana", "MySQL", "Reporting"]
-keywords = ["application usage", "macOS", "Jamf", "Grafana", "MySQL", "reporting"]
-description = "How to visualize and analyze macOS application usage data from Jamf Pro using Grafana and MySQL."
-showFullContent = false
-readingTime = true
-hideComments = false
-+++
+---
+title: Application Usage Reports using Grafana and MySQL
+date: 2021-09-06T07:43:41-04:00
+author: Oliver Reardon
+tags: 
+  - jamf-pro
+  - macos
+  - grafana
+  - mysql
+  - reporting
+keywords: 
+  - application usage
+  - macos
+  - jamf
+  - grafana
+  - mysql
+  - reporting
+description: How to visualize and analyze macOS application usage data from Jamf Pro using Grafana and MySQL.
+showFullContent: false
+readingTime: true
+hideComments: false
+---
 
 Application usage data on macOS can easily be misinterpreted. Even the native Screen Time service does not do a great job determining which applications were truly ‘in use’ and for how long. More on this here: [Spelunking macOS ScreenTime App Usage with R](https://www.r-bloggers.com/2019/10/spelunking-macos-screentime-app-usage-with-r/).
 
