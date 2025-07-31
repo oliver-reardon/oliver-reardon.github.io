@@ -1,17 +1,25 @@
-+++
-title = "Distributing a Proxy Auto-Configuration (PAC) file using AWS services"
-date = "2025-07-21T18:57:54-04:00"
-#dateFormat = "2006-01-02" # This value can be configured for per-post date formatting
-author = "Oliver Reardon"
-authorTwitter = "" #do not include @
-cover = ""
-tags = ["", ""]
-keywords = ["", ""]
-description = ""
-showFullContent = false
-readingTime = true
-hideComments = false
-+++
+---
+title: Distributing a Proxy Auto-Configuration (PAC) file using AWS services
+date: 2025-07-21T18:57:54-04:00
+author: Oliver Reardon
+tags: 
+  - aws
+  - s3
+  - cloudfront
+  - proxy
+  - terraform
+keywords: 
+  - pac file
+  - proxy configuration
+  - aws s3
+  - cloudfront
+  - terraform
+  - chrome enterprise
+description: How to distribute a Proxy Auto-Configuration (PAC) file using AWS S3, CloudFront, and Terraform for secure, scalable browser proxy management.
+showFullContent: false
+readingTime: true
+hideComments: false
+---
 
 A Proxy Auto-Configuration (PAC) file is a JavaScript file that tells browsers which proxy server to use for different websites automatically, rather than manually configuring proxy settings.
 

@@ -1,17 +1,21 @@
-+++
-title = "Jamf Pro Docker Container"
-date = "2023-01-22T10:09:06-04:00"
-#dateFormat = "2006-01-02" # This value can be configured for per-post date formatting
-author = "Oliver Reardon"
-authorTwitter = "" #do not include @
-cover = ""
-tags = ["jamf", "docker", "dev-environment"]
-keywords = ["jamf pro", "docker", "mysql", "testing"]
-description = "Use Docker to quickly stand up a Jamf Pro testing environment with MySQL and custom configuration."
-showFullContent = false
-readingTime = true
-hideComments = false
-+++
+---
+title: Jamf Pro Docker Container
+date: 2023-01-22T10:09:06-04:00
+author: Oliver Reardon
+tags: 
+  - jamf
+  - docker
+  - dev-environment
+keywords: 
+  - jamf pro
+  - docker
+  - mysql
+  - testing
+description: Use Docker to quickly stand up a Jamf Pro testing environment with MySQL and custom configuration.
+showFullContent: false
+readingTime: true
+hideComments: false
+---
 
 Setting up an additional Jamf Pro environment for development or testing can be time-consuming. Docker reduces this overhead and allows for fast and repeatable creation of a ready-to-use Jamf instance.
 

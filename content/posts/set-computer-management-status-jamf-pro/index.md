@@ -1,17 +1,25 @@
-+++
-title = "Mass Modify Computer Management Status In Jamf Pro"
-date = "2023-10-01T12:56:06-04:00"
-#dateFormat = "2006-01-02" # This value can be configured for per-post date formatting
-author = "Oliver Reardon"
-authorTwitter = "" #do not include @
-cover = ""
-tags = ["Jamf Pro", "management status", "automation", "cli", "python"]
-keywords = ["Jamf Pro", "management status", "mass action", "automation", "sms-cli", "python"]
-description = "How to set the management status of computers in Jamf Pro using a Python CLI tool after the removal of mass action in version 10.49."
-showFullContent = false
-readingTime = true
-hideComments = false
-+++
+---
+title: Mass Modify Computer Management Status In Jamf Pro
+date: 2023-10-01T12:56:06-04:00
+author: Oliver Reardon
+tags: 
+  - jamf-pro
+  - management-status
+  - automation
+  - cli
+  - python
+keywords: 
+  - jamf pro
+  - management status
+  - mass action
+  - automation
+  - sms-cli
+  - python
+description: How to set the management status of computers in Jamf Pro using a Python CLI tool after the removal of mass action in version 10.49.
+showFullContent: false
+readingTime: true
+hideComments: false
+---
 
 > Jamf removed the ability to mass action modify the management status for computers in 10.49.
 

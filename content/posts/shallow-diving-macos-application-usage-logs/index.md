@@ -1,17 +1,23 @@
-+++
-title = "Shallow Diving macOS Application Usage Logs with Jamf Pro"
-date = "2021-09-01T06:25:56-04:00"
-#dateFormat = "2006-01-02" # This value can be configured for per-post date formatting
-author = "Oliver Reardon"
-authorTwitter = "" #do not include @
-cover = ""
-tags = ["Jamf Pro", "macOS", "Application Usage"]
-keywords = ["Jamf", "macOS", "Usage Logs", "MDM"]
-description = "A technical overview of how Jamf Pro collects and stores macOS application usage logs."
-showFullContent = false
-readingTime = true
-hideComments = false
-+++
+---
+title: Shallow Diving macOS Application Usage Logs with Jamf Pro
+date: 2021-09-01T06:25:56-04:00
+author: Oliver Reardon
+tags: 
+  - jamf-pro
+  - macos
+  - application-usage
+  - mdm
+keywords: 
+  - jamf pro
+  - macos
+  - usage logs
+  - application monitoring
+  - mdm
+description: A technical overview of how Jamf Pro collects and stores macOS application usage logs.
+showFullContent: false
+readingTime: true
+hideComments: false
+---
 
 Application usage data on macOS can easily be misinterpreted. Even the native Screen Time service does not do a great job determining which applications were truly ‘in use’ and for how long.  
 More on this here: [Spelunking macOS ScreenTime App Usage with R](https://www.r-bloggers.com/2019/10/spelunking-macos-screentime-app-usage-with-r/)

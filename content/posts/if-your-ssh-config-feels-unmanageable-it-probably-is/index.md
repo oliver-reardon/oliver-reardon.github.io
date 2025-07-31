@@ -1,17 +1,25 @@
-+++
-title = "If your SSH config feels unmanageable, it probably is"
-date = "2025-04-23T15:43:00-04:00"
-#dateFormat = "2006-01-02" # This value can be configured for per-post date formatting
-author = "Oliver Reardon"
-authorTwitter = "" #do not include @
-cover = ""
-tags = ["ssh", "config", "ansible", "dotfiles", "automation"]
-keywords = ["ssh config", "modular ssh", "ansible", "dotfiles", "linux", "automation"]
-description = "How to organize and automate your SSH configuration using modular files and Ansible for better maintainability and portability."
-showFullContent = false
-readingTime = true
-hideComments = false
-+++
+---
+title: If your SSH config feels unmanageable, it probably is
+date: 2025-04-23T15:43:00-04:00
+author: Oliver Reardon
+tags: 
+  - ssh
+  - config
+  - ansible
+  - dotfiles
+  - automation
+keywords: 
+  - ssh config
+  - modular ssh
+  - ansible
+  - dotfiles
+  - linux
+  - automation
+description: How to organize and automate your SSH configuration using modular files and Ansible for better maintainability and portability.
+showFullContent: false
+readingTime: true
+hideComments: false
+---
 
 # Why a Modular SSH Config?
 

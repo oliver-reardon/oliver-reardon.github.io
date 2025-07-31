@@ -1,17 +1,27 @@
-+++
-title = "OSQuery Results to Loki with Kinesis Data Stream"
-date = "2023-10-19T11:35:25-04:00"
-#dateFormat = "2006-01-02" # This value can be configured for per-post date formatting
-author = "Oliver Reardon"
-authorTwitter = "" #do not include @
-cover = ""
-tags = ["osquery", "loki", "kinesis", "fleetdm", "lambda"]
-keywords = ["osquery", "grafana", "loki", "kinesis data stream", "fleetdm", "lambda transformation", "log aggregation", "macOS telemetry"]
-description = "A practical guide on forwarding macOS application usage data from osquery to Grafana Loki using AWS Kinesis and Lambda for enrichment."
-showFullContent = false
-readingTime = true
-hideComments = false
-+++
+---
+title: OSQuery Results to Loki with Kinesis Data Stream
+date: 2023-10-19T11:35:25-04:00
+author: Oliver Reardon
+tags: 
+  - osquery
+  - loki 
+  - kinesis
+  - fleetdm
+  - lambda
+keywords: 
+  - osquery
+  - grafana
+  - loki
+  - kinesis data stream
+  - fleetdm
+  - lambda transformation
+  - log aggregation
+  - macos telemetry
+description: A practical guide on forwarding macOS application usage data from osquery to Grafana Loki using AWS Kinesis and Lambda for enrichment.
+showFullContent: false
+readingTime: true
+hideComments: false
+---
 
 Forwarding [osquery](https://www.osquery.io/) results to a log aggregator or SIEM requires enriching the JSON data payload to match the destination’s expected structure. [AWS Kinesis Data Streams](https://aws.amazon.com/kinesis/data-streams/) ingests data in real time, applies transformations using Lambda, and then delivers the enriched JSON payload to the downstream destination — in this case, [Grafana Loki](https://grafana.com/oss/loki/).
 
