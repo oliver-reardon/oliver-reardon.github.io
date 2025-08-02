@@ -1,6 +1,6 @@
 ---
 title: "{{ replace .File.ContentBaseName "-" " " | title }}"
-date: {{ .Date }}
+date: "{{ .Date }}"
 author: "Oliver Reardon"
 tags: []
 keywords: []
