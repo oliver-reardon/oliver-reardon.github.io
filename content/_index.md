@@ -96,14 +96,14 @@ Focused on web-based tool design and online motion graphics.
 > Certain repositories are limited to internal project work and can only be accessed within the current organization.
 
 - [**Log forwarding of osquery results**](https://isthisthingon.tech/2025/03/17/osquery-results-to-loki-with-kinesis-data-stream/) to Grafana Loki via AWS Kinesis Data Stream.
-- [**Restrict web app access using AWS WAF**](https://github.com/pelotoncycle/cpe-fleet/blob/main/terraform/waf.tf) with CIDR ACL while keeping required API endpoints public.
+- [**Restrict web app access using AWS WAF**](https://oliver-reardon.github.io/posts/protecting-fleetdm-with-aws-waf/) with CIDR ACL while keeping required API endpoints public.
 - [**Provisioned an auto-scaling application**](https://github.com/pelotoncycle/cpe-fleet) on AWS ECS with Fargate launch type and RDS, using Terraform.
 - [**Puppet Server**](https://github.com/oliver-reardon/puppet-core/tree/main) deployed on EC2 with ingress controlled security group and [r10K control repo](https://github.com/pelotoncycle/cpe-puppet-control-repo).
 - [**Engineered an AWS Managed Grafana instance**](https://github.com/pelotoncycle/cpe-grafana/tree/main) using Terraform, integrated with Okta for federated authentication.
-- [**Presented series data with Grafana & MySQL**](https://isthisthingon.tech/2021/09/06/jamf-pro-application-usage-reports-using-grafana-and-mysql/) reducing software licensing costs and improving compliance.
-- [**Developed Python CLI**](https://github.com/1sth1sth1ng0n/smscli) to automate inventory data manipulation after a vendor change.  
+- [**Presented series data with Grafana & MySQL**](https://oliver-reardon.github.io/posts/application-usage-reports-using-grafana-and-mysql/) reducing software licensing costs and improving compliance.
+- [**Developed Python CLI**](https://oliver-reardon.github.io/posts/set-computer-management-status-jamf-pro/) to automate inventory data manipulation after a vendor change.  
 - [**Built real-time security dashboards**](https://github.com/pelotoncycle/cpe-repo/tree/main/splunk) with Splunk, integrating Jamf, Azure, Okta & OSQuery.  
-- [**Containerized MDM**](https://isthisthingon.tech/2023/01/22/jamf-pro-docker-container/) server development environments using Docker.  
+- [**Containerized MDM**](https://oliver-reardon.github.io/posts/jamf-pro-docker-container/) server development environments using Docker.  
 - **Leveraged Terraform & Scalr** for AWS S3 storage, CloudFront, and Lambda integrations.  
 - [**Implemented secure storage replication**](https://github.com/pelotoncycle/cpe-prkpass) for encryption keys with GnuPG & [GitHub Actions](https://github.com/pelotoncycle/cpe-prkpass/blob/main/.github/workflows/prkpass.yml).  
 - **Automated conference room device monitoring** via PowerShell & proprietary APIs.  
