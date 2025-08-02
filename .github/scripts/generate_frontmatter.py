@@ -39,8 +39,8 @@ def generate_and_apply_suggestions(file_path, force=False):
     Content: {content}
     
     Return ONLY a valid YAML structure with:
-    tags: [3-5 technical tags, lowercase, single words, use hyphens for compound terms]
-    keywords: [4-6 relevant keywords, lowercase, maximum 2 words each]
+    tags: [8 technical tags, lowercase, single words, use hyphens for compound terms]
+    keywords: [6 relevant keywords, lowercase, maximum 2 words each]
     
     Example format:
     tags: ["aws", "terraform", "automation", "cloud-storage"]
@@ -80,28 +80,37 @@ def generate_and_apply_suggestions(file_path, force=False):
             'readingTime', 'hideComments', 'draft'
         ]
         
-        # Build YAML front matter manually to preserve order
+        # Build YAML front matter manually to preserve field order
+        # We can't use yaml.dump() because it doesn't preserve our custom field ordering
         yaml_lines = ['---']
         
-        # Add fields in specified order
+        # STEP 1: Add fields in our preferred order (title, date, author, tags, etc.)
+        # This ensures consistent front matter structure across all posts
         for field in field_order:
-            if field in post.metadata:
+            if field in post.metadata:  # Only add fields that actually exist
                 value = post.metadata[field]
+                
+                # Handle different data types with proper YAML formatting
                 if isinstance(value, list):
-                    # Format arrays properly
+                    # Arrays: tags: \n  - item1 \n  - item2
                     yaml_lines.append(f'{field}:')
                     for item in value:
                         yaml_lines.append(f'  - {item}')
                 elif isinstance(value, bool):
+                    # Booleans: showFullContent: true (lowercase for YAML)
                     yaml_lines.append(f'{field}: {str(value).lower()}')
                 elif isinstance(value, str) and value == '':
+                    # Empty strings: description: ""
                     yaml_lines.append(f'{field}: ""')
                 else:
+                    # Everything else (strings, numbers, dates): field: value
                     yaml_lines.append(f'{field}: {value}')
         
-        # Add any remaining fields not in the order list
+        # STEP 2: Add any remaining fields that weren't in our ordered list
+        # This catches custom fields or fields we forgot to include in field_order
         for field, value in post.metadata.items():
-            if field not in field_order:
+            if field not in field_order:  # Skip fields we already processed above
+                # Use the same formatting logic as above
                 if isinstance(value, list):
                     yaml_lines.append(f'{field}:')
                     for item in value:
@@ -113,8 +122,9 @@ def generate_and_apply_suggestions(file_path, force=False):
                 else:
                     yaml_lines.append(f'{field}: {value}')
         
+        # Close the YAML front matter block
         yaml_lines.append('---')
-        yaml_lines.append('')  # Empty line after front matter
+        yaml_lines.append('')  # Empty line between front matter and content
         
         # Write the file manually
         with open(file_path, 'w') as f:
@@ -129,27 +139,40 @@ def generate_and_apply_suggestions(file_path, force=False):
 
 def main():
     """
-    Process all changed files and apply AI-generated front matter.
-    """
-    parser = argparse.ArgumentParser(description='Generate AI suggestions for Hugo front matter')
-    parser.add_argument('files', nargs='+', help='Markdown files to process')
-    parser.add_argument('--force', '-f', action='store_true', 
-                       help='Override existing tags and keywords')
+    Main entry point - processes command line arguments and applies AI-generated front matter to markdown files.
     
+    This function handles both single file processing (local testing) and multiple file processing 
+    (GitHub Actions workflow). It generates a summary file for GitHub PR comments.
+    """
+    # Set up command line argument parsing
+    parser = argparse.ArgumentParser(description='Generate AI suggestions for Hugo front matter')
+    parser.add_argument('files', nargs='+', help='Markdown files to process (supports glob patterns)')
+    parser.add_argument('--force', '-f', action='store_true', 
+                       help='Override existing tags and keywords even if they already exist')
+    
+    # Parse the provided command line arguments
     args = parser.parse_args()
     
+    # Track results for summary generation
     results = []
     
+    # Process each file provided via command line arguments
     for file_path in args.files:
+        # Only process markdown files in the posts directory
+        # This prevents accidentally processing other markdown files (README, etc.)
         if file_path.endswith('.md') and 'content/posts' in file_path:
+            # Apply AI suggestions to this specific file
             result = generate_and_apply_suggestions(file_path, force=args.force)
             results.append(result)
-            print(result)
+            print(result)  # Real-time feedback during processing
     
-    # Write summary for GitHub comment
+    # Generate summary file for GitHub Actions workflow
+    # This file gets read by the GitHub Action to post a PR comment
     summary = "## AI Front Matter Applied\n\n" + "\n".join([f"- {r}" for r in results])
     with open('ai-summary.md', 'w') as f:
         f.write(summary)
 
+# Standard Python idiom - only run main() when script is executed directly
+# (not when imported as a module)
 if __name__ == "__main__":
     main()
