@@ -110,7 +110,7 @@ It then runs the Python tag generator process on the detected changed file(s) an
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         run: |
-          python .github/scripts/generate_frontmatter.py "${{ steps.changed-files.outputs.all_changed_files }}"
+          python .github/scripts/generate_frontmatter.py ${{ steps.changed-files.outputs.all_changed_files }}
           
       - name: Commit AI changes
         run: |
