@@ -1,0 +1,19 @@
+/* Fix Chroma highlighting wrapping issues */
+pre.chroma code span {
+  white-space: nowrap;
+  line-height: 1.5 !important;
+  display: inline-block;
+  font-feature-settings: "calt" 0, "liga" 0;
+}
+/* Ensure horizontal scroll and consistent spacing */
+pre.chroma {
+  overflow-x: auto;
+  white-space: pre;
+  -webkit-overflow-scrolling: touch;
+}
+/* Optional: fallback fix for all code blocks */
+code, pre {
+  font-family: 'Fira Code', 'Courier New', monospace;
+  font-size: 0.95em;
+  line-height: 1.5;
+}

@@ -18,6 +18,7 @@ pagination.pagerSize = 5
       unsafe = true
 
 [params]
+  customCSS = ["css/custom.css"]
   # dir name of your main content (default is `content/posts`).
   # the list of set content will show up on your index page (baseurl).
   contentTypeName = "content"
