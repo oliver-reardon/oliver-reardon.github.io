@@ -13,7 +13,7 @@ keywords:
   - environment variable
   - password store
   - auto-completion
-description: How to use the pass CLI password manager with multiple repositories and enable zsh completion for each.
+description: "Multi-repository setup for the pass password manager with zsh completion support. Using environment variables and shell functions to manage separate password stores with proper auto-completion."
 showFullContent: false
 readingTime: true
 hideComments: false

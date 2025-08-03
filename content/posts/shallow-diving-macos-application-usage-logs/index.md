@@ -13,7 +13,7 @@ keywords:
   - usage logs
   - application monitoring
   - mdm
-description: A technical overview of how Jamf Pro collects and stores macOS application usage logs.
+description: "Technical analysis of Jamf Pro's macOS application usage logging system. Examining JamfDaemon collection methods, Launch Services integration, database storage, and API access to usage data."
 showFullContent: false
 readingTime: true
 hideComments: false

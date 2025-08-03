@@ -15,7 +15,7 @@ keywords:
   - grafana
   - mysql
   - reporting
-description: How to visualize and analyze macOS application usage data from Jamf Pro using Grafana and MySQL.
+description: "Visualizing macOS application usage data from Jamf Pro using Grafana and MySQL. Building custom dashboards to track app popularity and usage trends across managed devices, with time-series analysis and per-device breakdowns."
 showFullContent: false
 readingTime: true
 hideComments: false

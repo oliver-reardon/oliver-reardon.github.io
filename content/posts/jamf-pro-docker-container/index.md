@@ -11,7 +11,7 @@ keywords:
   - docker
   - mysql
   - testing
-description: Use Docker to quickly stand up a Jamf Pro testing environment with MySQL and custom configuration.
+description: "Containerizing Jamf Pro for development and testing using Docker and MySQL. Creating a repeatable Jamf Pro environment with Docker Compose, custom MySQL authentication, and streamlined deployment."
 showFullContent: false
 readingTime: true
 hideComments: false

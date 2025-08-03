@@ -15,7 +15,7 @@ keywords:
   - dotfiles
   - linux
   - automation
-description: How to organize and automate your SSH configuration using modular files and Ansible for better maintainability and portability.
+description: "Organizing SSH configuration using modular files and Ansible automation. Breaking down monolithic SSH configs into manageable, context-grouped files with numbered ordering and automated deployment."
 showFullContent: false
 readingTime: true
 hideComments: false

@@ -16,7 +16,7 @@ keywords:
   - terraform
   - cloud
   - osquery
-description: "Learn how to secure FleetDM's web console using AWS WAF with IP restrictions and Terraform automation. This guide covers blocking unauthorized access while maintaining essential API endpoints for osquery agents, complete with CloudWatch logging and infrastructure-as-code implementation."
+description: "Building network-layer security for FleetDM with AWS WAF and Terraform. Exploring IP whitelisting, API endpoint filtering, and automated infrastructure deployment for osquery management platforms."
 showFullContent: false
 readingTime: true
 hideComments: false
