@@ -18,7 +18,7 @@ keywords:
   - seo
   - automation
   - machine learning
-description: "Learn how to automate content tagging for Hugo static sites using AI. This guide covers building a Python script with OpenAI's API to generate relevant tags and keywords, integrating it into GitHub Actions workflows for automatic processing during pull requests, and maintaining consistent YAML front matter structure across all blog posts."
+description: "AI-driven content tagging automation for static sites. Exploring OpenAI API integration with GitHub Actions to generate contextual tags and keywords for Hugo blog posts with modular front matter management."
 showFullContent: false
 readingTime: true
 hideComments: true
@@ -110,7 +110,7 @@ It then runs the Python tag generator process on the detected changed file(s) an
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         run: |
-          python .github/scripts/generate_frontmatter.py "${{ steps.changed-files.outputs.all_changed_files }}"
+          python .github/scripts/generate_frontmatter.py ${{ steps.changed-files.outputs.all_changed_files }}
           
       - name: Commit AI changes
         run: |

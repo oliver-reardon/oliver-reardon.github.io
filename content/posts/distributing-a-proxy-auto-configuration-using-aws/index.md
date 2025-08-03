@@ -15,7 +15,7 @@ keywords:
   - cloudfront
   - terraform
   - chrome enterprise
-description: How to distribute a Proxy Auto-Configuration (PAC) file using AWS S3, CloudFront, and Terraform for secure, scalable browser proxy management.
+description: "Distributing a Proxy Auto-Configuration (PAC) file using AWS S3, CloudFront, and Terraform. Building a secure, globally accessible solution for Chrome Enterprise proxy management with proper HTTPS delivery and MIME type handling."
 showFullContent: false
 readingTime: true
 hideComments: false

@@ -17,7 +17,7 @@ keywords:
   - lambda transformation
   - log aggregation
   - macos telemetry
-description: A practical guide on forwarding macOS application usage data from osquery to Grafana Loki using AWS Kinesis and Lambda for enrichment.
+description: "Streaming OSQuery results from FleetDM to Grafana Loki using AWS Kinesis Data Streams and Lambda transformation. Building a telemetry pipeline for macOS application usage data with JSON enrichment and LogQL querying."
 showFullContent: false
 readingTime: true
 hideComments: false

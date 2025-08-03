@@ -12,7 +12,7 @@ keywords:
   - infrastructure automation
   - terraform generator
   - project structure
-description: A lightweight Makefile-based tool for generating consistent Terraform project structures with organizational standards and best practices.
+description: "Makefile-driven Terraform scaffolding for consistent project structures. Automating infrastructure project creation with opinionated templates, environment configurations, and terraform-docs integration."
 showFullContent: false
 readingTime: true
 hideComments: false

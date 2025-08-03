@@ -15,7 +15,7 @@ keywords:
   - automation
   - sms-cli
   - python
-description: How to set the management status of computers in Jamf Pro using a Python CLI tool after the removal of mass action in version 10.49.
+description: "Python CLI tool for mass modifying computer management status in Jamf Pro after the removal of mass action functionality in version 10.49. Using Advanced Computer Search integration and the Universal API for bulk operations."
 showFullContent: false
 readingTime: true
 hideComments: false
