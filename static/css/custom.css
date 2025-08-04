@@ -1,19 +1,11 @@
-/* Fix Chroma highlighting wrapping issues */
-pre.chroma code span {
-  white-space: nowrap;
-  line-height: 1.5 !important;
-  display: inline-block;
-  font-feature-settings: "calt" 0, "liga" 0;
-}
-/* Ensure horizontal scroll and consistent spacing */
-pre.chroma {
-  overflow-x: auto;
-  white-space: pre;
-  -webkit-overflow-scrolling: touch;
-}
-/* Optional: fallback fix for all code blocks */
-code, pre {
-  font-family: 'Fira Code', 'Courier New', monospace;
-  font-size: 0.95em;
+/* Target all code blocks and nested highlight elements */
+pre, code, pre code, .highlight, .highlight * {
+  font-family: Menlo, Monaco, Consolas, "Courier New", monospace !important;
+  font-size: 0.95rem !important;
+  font-weight: normal !important;
   line-height: 1.5;
+  -webkit-text-size-adjust: none;
+  -webkit-font-smoothing: antialiased;
+  font-variant-ligatures: none;
+  letter-spacing: normal !important;
 }
