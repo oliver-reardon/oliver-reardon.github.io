@@ -23,7 +23,7 @@ hideComments: false
 
 # Why a Modular SSH Config?
 
-Managing SSH configuration can quickly become overwhelming as your environment grows. A single `~/.ssh/config` file often turns into a tangled mix of work servers, personal machines, cloud hosts, and GitHub setups. Over time, this file accumulates dozens—sometimes hundreds—of entries, making it difficult to find what you need, spot errors, or safely share parts of your config. One misplaced line or typo can break connectivity for multiple hosts, and the lack of structure makes it risky to reuse or sync your config across devices. By adopting a modular approach—splitting your SSH configuration into focused, numbered files grouped by context—you gain clarity, maintainability, and the flexibility to share or update only the relevant sections. This method transforms SSH management from a fragile, monolithic file into a robust, organized system that scales with your needs.
+Managing SSH configuration can quickly become overwhelming as your environment grows. A single `~/.ssh/config` file often turns into a tangled mix of work servers, personal machines, cloud hosts, and GitHub setups. Over time, this file accumulates dozens—sometimes hundreds—of entries, making it difficult to find what you need, spot errors, or safely share parts of your config. One misplaced line or typo can break connectivity for multiple hosts, and the lack of structure makes it risky to reuse or sync your config across devices. By adopting a modular approach and splitting your SSH configuration into focused numbered files grouped by context you gain clarity, maintainability, and the flexibility to share or update only the relevant sections. This method transforms SSH management from a fragile, monolithic file into a robust organized system that scales with your needs.
 
 ## Directory Structure Example
 
@@ -51,13 +51,13 @@ Include ~/.ssh/config.d/*/config
 
 ## Benefits of This Setup
 
-This setup keeps everything modular, readable, and far easier to manage. It also makes syncing configs across devices—or sharing just the work-related parts—safe and straightforward. Once you try it, the old single-file approach feels instantly outdated.
+This setup keeps everything modular, readable, and far easier to manage. It also makes syncing configs across devices or sharing just the work-related parts safe and straightforward. Once you try it, the old single-file approach feels instantly outdated.
 
-Use `ssh -G <host>` to preview the final, merged configuration for a host—including settings from all included files—without actually connecting, making it ideal for debugging modular SSH setups.
+Use `ssh -G <host>` to preview the final merged configuration for a host, including settings from all included files without actually connecting, making it ideal for debugging modular SSH setups.
 
 ## Bootstrap Your Modular SSH Setup with Ansible
 
-The following Ansible playbook can automate the bootstrap of this modular SSH configuration. It clones a dotfiles repository, creates an SSH config file with an `Include` directive to load all configs from the `config.d` directory, and symlinks the grouped config directory into place. This keeps the SSH setup organized, maintainable, and easy to sync across systems.
+The following Ansible playbook (`bootstrap.yml`) can automate the bootstrap of this modular SSH configuration. It clones a dotfiles repository, creates an SSH config file with an `Include` directive to load all configs from the `config.d` directory, and symlinks the grouped config directory into place. This keeps the SSH setup organized, maintainable, and easy to sync across systems.
 
 ```yaml
 ---
@@ -85,4 +85,9 @@ The following Ansible playbook can automate the bootstrap of this modular SSH co
     force: true
   loop:
     - { src: "ssh-config.d", dest: ".ssh/config.d" }
+```
+
+Run the playbook:
+```bash
+ansible-playbook -K -i ansible/inventory.yml ansible/bootstrap.yml
 ```
