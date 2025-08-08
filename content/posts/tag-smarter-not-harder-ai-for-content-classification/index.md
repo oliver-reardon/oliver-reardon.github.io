@@ -37,7 +37,7 @@ I find it useful to use tags to group related technologies and create connection
 
 ## The Goal
 
-After writing a sufficient amount of content per post, I find the most accurate way of generating tags is to let AI parse the body and spit out some contextual tags plus keywords. Having AI generate tags/keywords is a great timesaver and offers accuracy and a broader array of results. I wanted to automate the tag generation as part of my site build/deploy process. The goal was to include an additional process during Pull Request creation that generated the tags, giving me the opportunity to review them before merging to the main branch.
+After writing a sufficient amount of content per post, I find the most accurate way of generating tags is to let AI parse the body and generate some contextual tags plus keywords. Having AI generate tags/keywords is a great timesaver and offers accuracy and a broader array of results. I wanted to automate the tag generation as part of my site build/deploy process. The goal was to include an additional process during Pull Request creation that generated the tags, giving me the opportunity to review them before merging to the main branch.
 
 ## Processing
 
@@ -108,21 +108,21 @@ on:
 It then runs the Python tag generator process on the detected changed file(s) and commits them to the Pull Request branch explicitly:
 
 ```yaml
-      - name: Generate and apply AI suggestions
-        env:
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-        run: |
-          python .github/scripts/generate_frontmatter.py ${{ steps.changed-files.outputs.all_changed_files }}
-          
-      - name: Commit AI changes
-        run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "AI Front Matter Bot"
-          git add .
-          if ! git diff --cached --quiet; then
-            git commit -m "Add AI-generated tags and keywords"
-            git push origin ${{ github.head_ref }}  # Push to the PR branch explicitly
-          fi
+- name: Generate and apply AI suggestions
+  env:
+    OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+  run: |
+    python .github/scripts/generate_frontmatter.py ${{ steps.changed-files.outputs.all_changed_files }}
+    
+- name: Commit AI changes
+  run: |
+    git config --local user.email "action@github.com"
+    git config --local user.name "AI Front Matter Bot"
+    git add .
+    if ! git diff --cached --quiet; then
+      git commit -m "Add AI-generated tags and keywords"
+      git push origin ${{ github.head_ref }}  # Push to the PR branch explicitly
+    fi
 ```
 
 The [final step](https://github.com/oliver-reardon/oliver-reardon.github.io/blob/515cbfd4f20d65c42ea00f935e6d0f55804f731b/.github/workflows/ai-tag-gen.yml#L58) of the `generate-frontmatter` job uses a [summary report](https://github.com/oliver-reardon/oliver-reardon.github.io/blob/515cbfd4f20d65c42ea00f935e6d0f55804f731b/.github/scripts/generate_frontmatter.py#L149) to create a Pull Request comment specifying which post front matter was modified. After reviewing the new AI generated tags I have the option to merge the Pull Request or cancel if the generated tags are not satisfactory for the subject matter or content.
