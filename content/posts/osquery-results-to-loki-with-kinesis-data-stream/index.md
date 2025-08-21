@@ -107,6 +107,8 @@ Once the above query automation runs, the data is forwarded to the downstream lo
 
 To enrich this JSON data structure so Loki can ingest it we need to use a Lambda transformation attached to the Kinesis Data Stream. When the Kinesis Data Stream receives incoming data it will buffer the events to the Lambda function which extracts the event records, decodes them from base64 and appends additional meta data that Loki can use.
 
+Details of the Python AWS Lambda function I created can be found [here](https://github.com/oliver-reardon/fleet-logging/blob/main/transform_send_events_loki.py).
+
 ## Post-enriched Data:
 
 ```json
