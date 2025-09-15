@@ -36,6 +36,7 @@ Infrastructure as Code (IaC) · AI · OSQuery · Serverless Framework · Bash/Zs
 - **CompTIA Network+**  
 - **R/GA Cube Award Winner**  
 - **Certified Kubernetes Administrator (CKA)** (In Progress)
+- **[HashiCorp Certified: Terraform Associate](https://www.credly.com/badges/94f63417-b2fd-4da7-bd01-135fdb28b65b/public_url)**
 - **Made 2,861 GitHub contributions** over the last year across various projects.
 ---
 
