@@ -12,7 +12,6 @@ showToc: true
 showComments: false
 --- 
 
-Proven expertise in diagnosing complex issues and identifying root causes with precision.
 Specializes in event-driven automation, security hardening, and compliance enforcement.
 Designs and deploys scalable, resilient systems optimized for reliability, performance, and efficiency.
 Experienced in incident management, observability, and infrastructure as code, with a strong focus on minimizing operational toil through automation and strategic design.
@@ -23,9 +22,9 @@ Experienced in incident management, observability, and infrastructure as code, w
 
 ## 🔧 Skills & Technologies  
 
-Docker · AWS · Anisble · macOS/Linux/Unix/Chrome @ scale · Azure · Terraform · Windows Server · CI/CD · Python ·
+Docker · AWS · Ansible · macOS/Linux/Unix/Chrome @ scale · Azure · Terraform · Windows Server · CI/CD · Python ·
 Git · API integrations · Jira · DevOps · Grafana · Splunk · Puppet · Scalr · MDM · PowerShell  
-Infrastructure as Code (IaC) · AI · OSQuery · Serverless Framework · Bash/Zsh  
+Infrastructure as Code (IaC) · AI · OSQuery · Serverless Framework · Bash/Zsh · AI · MCP
 
 ---
 
@@ -47,19 +46,18 @@ Infrastructure as Code (IaC) · AI · OSQuery · Serverless Framework · Bash/Zs
 - **Senior Client Platform Engineer (Team Lead)** *(Dec 2023 - June 2024)*  
 - **Client Platform Engineer** *(Sept 2023 - Dec 2023)*  
 
-Manager leading the Client Platform Engineering team, responsible for scaling and maintaining platform systems with a focus on automation, security, and reliability. Oversee sprint planning, project execution, and cross-functional collaboration to improve efficiency and streamline operations.
+Manager leading the Client Platform Engineering team, combining hands-on engineering expertise with strategic leadership to scale and maintain secure, reliable, and highly automated platform systems. Drive sprint planning, project execution, and cross-functional collaboration while actively contributing to system design, automation, and architectural decisions to improve efficiency and streamline operations.
 
 #### **Key Responsibilities:**  
-✔ Unify multiple platforms using proprietary APIs and data sources.  
-✔ Conduct and oversee Jira sprint planning to define operational project requirements.  
-✔ Track Terraform Scalr builds to monitor output and cost estimates.  
-✔ Manage large-scale operations and endpoints via MDM and configuration management.  
-✔ Create aggregated data event pipelines for SIEM tools with shared dashboard metrics.  
-✔ Design scalable solutions to improve workflows and operational efficiency.  
-✔ Participate in on-call rotations and ensure rapid incident response.  
-✔ Direct project priorities while maintaining corporate change control standards.  
-✔ Develop automation workflows to minimize manual intervention and improve reliability.  
-✔ Provide hands-on enterprise networking expertise within corporate infrastructure.  
+✔ Architect and unify cross-platform systems using proprietary APIs and data integrations.
+✔ Manage large-scale endpoint and fleet operations via MDM and configuration management.
+✔ Build aggregated event pipelines and shared metrics for SIEM and security observability.
+✔ Design and implement scalable automation to drive reliability, efficiency, and operational resilience.
+✔ Lead production incident response and participate in on-call rotations.
+✔ Integrate AI-driven automation and analytics to enhance operations, security, and decision-making.
+✔ Lead Jira sprint planning, execution tracking, and delivery for operational engineering initiatives.
+✔ Oversee Terraform + Scalr pipelines for infrastructure provisioning, cost visibility, and governance.
+✔ Partner with SOC to validate findings and execute security remediation.
 
 ---
 
@@ -70,16 +68,15 @@ Lead global IT team managing corporate endpoints across 19 sites.
 Engineered integrations with SaaS products while ensuring security and compliance.  
 
 #### **Key Responsibilities:**  
-✔ Automated workflows using Bash, PowerShell, and Python.  
-✔ Managed Linux nodes and microservices with Puppet.  
-✔ Ensured service level objectives were consistently met.  
-✔ Automated, scaled, and migrated infrastructure across cloud and on-prem environments.  
-✔ Implemented security best practices (CIS benchmarks, SOX compliance).  
-✔ Validated and remediated security recommendations from SOC.  
-✔ Managed endpoint security via MDM.  
-✔ Created technical documentation and internal knowledge base articles.  
-✔ Ensured virtualized infrastructure availability and responded to incidents.  
-✔ Maintained trust relationships via PKI, Kerberos, SSO, LDAP, and 802.1x authentication.  
+✔ Engineered production-grade automation using Bash, PowerShell, and Python.
+✔ Operated and scaled Linux microservices and node fleets using Puppet.
+✔ Drove infrastructure reliability to consistently meet and exceed SLOs.
+✔ Led cloud and on-prem infrastructure automation, scaling, and large-scale migrations.
+✔ Implemented enterprise security controls aligned with CIS benchmarks and SOX requirements.
+✔ Directed endpoint security strategy and enforcement via MDM.
+✔ Authored and maintained high-value technical documentation and internal knowledge systems.
+✔ Owned virtualized infrastructure availability and led incident response.
+✔ Architected and maintained enterprise identity and trust systems (PKI, Kerberos, SSO, LDAP, 802.1X).
 
 ---
 
@@ -96,22 +93,20 @@ Focused on web-based tool design and online motion graphics.
 
 > Certain repositories are limited to internal project work and can only be accessed within the current organization.
 
-- [**Log forwarding of osquery results**](https://isthisthingon.tech/2025/03/17/osquery-results-to-loki-with-kinesis-data-stream/) to Grafana Loki via AWS Kinesis Data Stream.
+- [**Log forwarding of osquery results**](https://oliver-reardon.github.io/posts/osquery-results-to-loki-with-kinesis-data-stream/) to Grafana Loki via AWS Kinesis Data Stream.
+- [**Automated secure browser proxy configuration at scale using AWS S3 and CloudFront**](https://oliver-reardon.github.io/posts/distributing-a-proxy-auto-configuration-using-aws/)
 - [**Restrict web app access using AWS WAF**](https://oliver-reardon.github.io/posts/protecting-fleetdm-with-aws-waf/) with CIDR ACL while keeping required API endpoints public.
-- [**Provisioned an auto-scaling application**](https://github.com/pelotoncycle/cpe-fleet) on AWS ECS with Fargate launch type and RDS, using Terraform.
-- [**Puppet Server**](https://github.com/oliver-reardon/puppet-core/tree/main) deployed on EC2 with ingress controlled security group and [r10K control repo](https://github.com/pelotoncycle/cpe-puppet-control-repo).
-- [**Engineered an AWS Managed Grafana instance**](https://github.com/pelotoncycle/cpe-grafana/tree/main) using Terraform, integrated with Okta for federated authentication.
+- **Provisioned an auto-scaling application** on AWS ECS with Fargate launch type and RDS, using Terraform.
+- [**Puppet Server**](https://github.com/oliver-reardon/puppet-core/tree/main) deployed on EC2 with ingress controlled security group and r10K control repo.
+- Engineered an AWS Managed Grafana instance** using Terraform, integrated with Okta for federated authentication.
 - [**Presented series data with Grafana & MySQL**](https://oliver-reardon.github.io/posts/application-usage-reports-using-grafana-and-mysql/) reducing software licensing costs and improving compliance.
 - [**Developed Python CLI**](https://oliver-reardon.github.io/posts/set-computer-management-status-jamf-pro/) to automate inventory data manipulation after a vendor change.  
-- [**Built real-time security dashboards**](https://github.com/pelotoncycle/cpe-repo/tree/main/splunk) with Splunk, integrating Jamf, Azure, Okta & OSQuery.  
+- **Built real-time security dashboards** with Splunk, integrating Jamf, Azure, Okta & OSQuery.  
 - [**Containerized MDM**](https://oliver-reardon.github.io/posts/jamf-pro-docker-container/) server development environments using Docker.  
-- **Leveraged Terraform & Scalr** for AWS S3 storage, CloudFront, and Lambda integrations.  
-- [**Implemented secure storage replication**](https://github.com/pelotoncycle/cpe-prkpass) for encryption keys with GnuPG & [GitHub Actions](https://github.com/pelotoncycle/cpe-prkpass/blob/main/.github/workflows/prkpass.yml).  
-- **Automated conference room device monitoring** via PowerShell & proprietary APIs.  
-- **Managed SSL-secured web application** for X.509 certificate delivery via AD CS proxy.  
+- **Implemented secure storage replication** for drive encryption keys with GnuPG & GitHub Actions.  
 - **Integrated software repo into a CI/CD pipeline** with GitHub pull request approvals.  
-- [**Created AWS Lambda function**](https://github.com/1sth1sth1ng0n/ms-graph-api-ea/blob/main/handler.py) to query Azure AD group memberships efficiently.
-- [**Automation pipelines**](https://github.com/pelotoncycle/cpe-onsite-automations) used by external vendors and ITAM for audited requests and elevated access to management systems and tooling.
+- [**Created AWS Lambda function**](https://github.com/oliver-reardon/ms-graph-api-ea) to query Azure AD group membership efficiently.
+- **Automation pipelines** (CI/Lambda) used by external vendors and ITAM for audited requests and elevated access to management systems and tooling.
 - [**My Talent Profile**](https://github.com/oliver-reardon/oliver-reardon.github.io) produced using [hugo](https://gohugo.io/) and deployed using [GitHub Actions](https://github.com/oliver-reardon/oliver-reardon.github.io/blob/main/.github/workflows/deploy.yml) with cache validation.
 
 ---
