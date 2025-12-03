@@ -49,15 +49,15 @@ Infrastructure as Code (IaC) · AI · OSQuery · Serverless Framework · Bash/Zs
 Manager leading the Client Platform Engineering team, combining hands-on engineering expertise with strategic leadership to scale and maintain secure, reliable, and highly automated platform systems. Drive sprint planning, project execution, and cross-functional collaboration while actively contributing to system design, automation, and architectural decisions to improve efficiency and streamline operations.
 
 #### **Key Responsibilities:**  
-✔ Architect and unify cross-platform systems using proprietary APIs and data integrations.
-✔ Manage large-scale endpoint and fleet operations via MDM and configuration management.
-✔ Build aggregated event pipelines and shared metrics for SIEM and security observability.
-✔ Design and implement scalable automation to drive reliability, efficiency, and operational resilience.
-✔ Lead production incident response and participate in on-call rotations.
-✔ Integrate AI-driven automation and analytics to enhance operations, security, and decision-making.
-✔ Lead Jira sprint planning, execution tracking, and delivery for operational engineering initiatives.
-✔ Oversee Terraform + Scalr pipelines for infrastructure provisioning, cost visibility, and governance.
-✔ Partner with SOC to validate findings and execute security remediation.
+- Architect and unify cross-platform systems using proprietary APIs and data integrations.
+- Manage large-scale endpoint and fleet operations via MDM and configuration management.
+- Build aggregated event pipelines and shared metrics for SIEM and security observability.
+- Design and implement scalable automation to drive reliability, efficiency, and operational resilience.
+- Lead production incident response and participate in on-call rotations.
+- Integrate AI-driven automation and analytics to enhance operations, security, and decision-making.
+- Lead Jira sprint planning, execution tracking, and delivery for operational engineering initiatives.
+- Oversee Terraform + Scalr pipelines for infrastructure provisioning, cost visibility, and governance.
+- Partner with SOC to validate findings and execute security remediation.
 
 ---
 
@@ -68,15 +68,15 @@ Lead global IT team managing corporate endpoints across 19 sites.
 Engineered integrations with SaaS products while ensuring security and compliance.  
 
 #### **Key Responsibilities:**  
-✔ Engineered production-grade automation using Bash, PowerShell, and Python.
-✔ Operated and scaled Linux microservices and node fleets using Puppet.
-✔ Drove infrastructure reliability to consistently meet and exceed SLOs.
-✔ Led cloud and on-prem infrastructure automation, scaling, and large-scale migrations.
-✔ Implemented enterprise security controls aligned with CIS benchmarks and SOX requirements.
-✔ Directed endpoint security strategy and enforcement via MDM.
-✔ Authored and maintained high-value technical documentation and internal knowledge systems.
-✔ Owned virtualized infrastructure availability and led incident response.
-✔ Architected and maintained enterprise identity and trust systems (PKI, Kerberos, SSO, LDAP, 802.1X).
+- Engineered production-grade automation using Bash, PowerShell, and Python.
+- Operated and scaled Linux microservices and node fleets using Puppet.
+- Drove infrastructure reliability to consistently meet and exceed SLOs.
+- Led cloud and on-prem infrastructure automation, scaling, and large-scale migrations.
+- Implemented enterprise security controls aligned with CIS benchmarks and SOX requirements.
+- Directed endpoint security strategy and enforcement via MDM.
+- Authored and maintained high-value technical documentation and internal knowledge systems.
+- Owned virtualized infrastructure availability and led incident response.
+- Architected and maintained enterprise identity and trust systems (PKI, Kerberos, SSO, LDAP, 802.1X).
 
 ---
 
