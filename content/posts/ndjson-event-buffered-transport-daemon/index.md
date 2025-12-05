@@ -50,7 +50,7 @@ SAP Privileges Event → privileges_local_logger.sh → Local NDJSON Log → new
 
 ### Event Capture
 
-To create dedicated log events we leveraged the SAP Privileges key [PostChangeExecutablePath](https://github.com/SAP/macOS-enterprise-privileges/wiki/Managing-Privileges#PostChangeExecutablePath) which executes a simple [bash script]() that records structured log entries locally with context captured from the provided arguments.
+To create dedicated log events we leveraged the SAP Privileges key [PostChangeExecutablePath](https://github.com/SAP/macOS-enterprise-privileges/wiki/Managing-Privileges#PostChangeExecutablePath) which executes a simple [bash script](https://gist.github.com/oliver-reardon/324f330c363ef1a3ec69766ecee55295) that records structured log entries locally with context captured from the provided arguments.
 
 > When set, the PrivilegesAgent executes the given application or script and provides the current user's user name ($1) and its privileges (admin or user, $2) as launch arguments. If the application or script does not exist or is not executable, the launch operation fails silently.
 
@@ -59,6 +59,7 @@ To create dedicated log events we leveraged the SAP Privileges key [PostChangeEx
 Each event is logged as a single line of JSON to `/usr/local/var/log/privileges/events.ndjson`:
 
 ```json
+// /usr/local/var/log/privileges/events.ndjson
 {
   "event_type": "privileges_change",      // Always "privileges_change" for normal events
   "username": "john.doe",                 // User account receiving/losing admin privileges
@@ -90,7 +91,9 @@ After newsyslog rotates the file, Fluent Bit continues tailing the newly created
 
 Once events reach Fluent Bit, it immediately parses each NDJSON record and attempts to forward it to the API endpoint. If the network is unavailable or the API cannot be reached, Fluent Bit automatically buffers the events in memory and then spills them to disk using its filesystem-backed storage configuration. These queued events are persisted across restarts, retried continuously, and flushed in order as soon as connectivity is restored, ensuring reliable, lossless delivery to the API.
 
-## Components
+> **Configuration**: See the complete [fluent-bit.conf](https://gist.github.com/oliver-reardon/8abf33308138d40e8563669b2db65de5) with input tail configuration, NDJSON parser, and HTTP output with authentication headers. The JWT authentication token is securely passed to Fluent Bit as an environment variable from the LaunchDaemon, keeping credentials out of the configuration file.
+
+### Components
 
 | Component | Purpose | Location |
 |-----------|---------|----------|
@@ -99,6 +102,14 @@ Once events reach Fluent Bit, it immediately parses each NDJSON record and attem
 | `parsers.conf` | JSON parsing rules for Fluent Bit | `/usr/local/etc/fluent-bit/` |
 | `newsyslog-privileges.conf` | Log rotation configuration | `/etc/newsyslog.d/` |
 | `com.privileges.fluent-bit.plist` | LaunchDaemon for Fluent Bit service | `/Library/LaunchDaemons/` |
+
+### Log Locations
+
+| Log Type | Location | Purpose |
+|----------|----------|---------|
+| Event logs | `/usr/local/var/log/privileges/events.ndjson` | Raw privilege events |
+| Fluent Bit logs | `/usr/local/var/log/fluent-bit.log` | Fluent Bit output |
+| Fluent Bit errors | `/usr/local/var/log/fluent-bit-error.log` | Fluent Bit errors |
 
 
 
