@@ -93,6 +93,7 @@ Focused on web-based tool design and online motion graphics.
 
 > Certain repositories are limited to internal project work and can only be accessed within the current organization.
 
+- [**Engineered offline-capable NDJSON log transport pipeline**](/posts/ndjson-event-buffered-transport-daemon/) for SAP Privileges (macOS) using Fluent Bit, `newsyslog`, and JWT-authenticated API forwarding.
 - [**Log forwarding of osquery results**](https://oliver-reardon.github.io/posts/osquery-results-to-loki-with-kinesis-data-stream/) to Grafana Loki via AWS Kinesis Data Stream.
 - [**Automated secure browser proxy configuration at scale using AWS S3 and CloudFront**](https://oliver-reardon.github.io/posts/distributing-a-proxy-auto-configuration-using-aws/)
 - [**Restrict web app access using AWS WAF**](https://oliver-reardon.github.io/posts/protecting-fleetdm-with-aws-waf/) with CIDR ACL while keeping required API endpoints public.
