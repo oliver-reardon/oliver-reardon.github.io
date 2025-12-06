@@ -1,15 +1,28 @@
 ---
-title: "NDJSON Event Buffered Transport Daemon"
-date: "2025-12-05T11:41:27-05:00"
-author: "Oliver Reardon"
-tags: []
-keywords: []
+title: NDJSON Event Buffered Transport Daemon
+date: 2025-12-05T11:41:27-05:00
+author: Oliver Reardon
+tags:
+  - macos
+  - logging
+  - event-buffering
+  - transport-daemon
+  - enterprise-deployment
+  - remote-api
+  - jwt-authentication
+  - structured-json
+keywords:
+  - offline-capable
+  - buffering
+  - authentication
+  - event-logging
+  - remote-forwarding
+  - log-store
 description: ""
 showFullContent: false
 readingTime: true
 hideComments: true
 ---
-
 An offline-capable macOS logging framework that records events locally as plain-text logs and reliably forwards them to any remote API or generic text-based log store when connectivity is available. Built for enterprise deployment with reliable delivery and minimal operational overhead.
 
 ## Background
@@ -128,18 +141,3 @@ Once complete, events start flowing immediately with no additional runtime depen
 | Event log                     | `/usr/local/var/log/privileges/events.ndjson`  | Raw privilege events             |
 | Fluent Bit log                | `/usr/local/var/log/fluent-bit.log`           | Fluent Bit output                |
 | Fluent Bit error log          | `/usr/local/var/log/fluent-bit-error.log`     | Fluent Bit errors                |
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
