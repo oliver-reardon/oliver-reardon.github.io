@@ -76,8 +76,8 @@ Each event is logged as a single line of JSON to `/usr/local/var/log/privileges/
   "hostname": "MacBook-Pro",              // Computer name for human-readable identification
   "hardware_uuid": "12345678-1234-1234-1234-123456789012", // Stable hardware identifier
   "parent_process": "Privileges",         // Process that triggered the event (usually "Privileges")
-  "parent_pid": 1234,                     // Process ID of parent process
-  "script_pid": 5678,                     // Process ID of logger script
+  "parent_pid": 1236,                     // Process ID of parent process
+  "script_pid": 5679,                     // Process ID of logger script
   "script_version": "1.0"                 // Version of the logging script
 }
 ```
@@ -112,7 +112,7 @@ At a high level, the deployment sequence is:
 7. Install the `newsyslog` configuration.
 8. Load and start the Fluent Bit LaunchDaemon.
 
-Once complete, events begin flowing immediately with no additional runtime dependencies.
+Once complete, events start flowing immediately with no additional runtime dependencies.
 
 ## Operational Reference
 
