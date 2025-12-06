@@ -1,15 +1,28 @@
 ---
-title: "NDJSON Event Buffered Transport Daemon"
-date: "2025-12-05T11:41:27-05:00"
-author: "Oliver Reardon"
-tags: []
-keywords: []
+title: NDJSON Event Buffered Transport Daemon
+date: 2025-12-05T11:41:27-05:00
+author: Oliver Reardon
+tags:
+  - macos
+  - logging
+  - event-buffering
+  - transport-daemon
+  - enterprise-deployment
+  - remote-api
+  - jwt-authentication
+  - structured-json
+keywords:
+  - offline-capable
+  - buffering
+  - authentication
+  - event-logging
+  - remote-forwarding
+  - log-store
 description: ""
 showFullContent: false
 readingTime: true
 hideComments: true
 ---
-
 An offline-capable macOS logging framework that records events locally as plain-text logs and reliably forwards them to any remote API or generic text-based log store when connectivity is available. Built for enterprise deployment with reliable delivery and minimal operational overhead.
 
 ## Background
@@ -76,8 +89,8 @@ Each event is logged as a single line of JSON to `/usr/local/var/log/privileges/
   "hostname": "MacBook-Pro",              // Computer name for human-readable identification
   "hardware_uuid": "12345678-1234-1234-1234-123456789012", // Stable hardware identifier
   "parent_process": "Privileges",         // Process that triggered the event (usually "Privileges")
-  "parent_pid": 1234,                     // Process ID of parent process
-  "script_pid": 5678,                     // Process ID of logger script
+  "parent_pid": 1236,                     // Process ID of parent process
+  "script_pid": 5679,                     // Process ID of logger script
   "script_version": "1.0"                 // Version of the logging script
 }
 ```
@@ -112,7 +125,7 @@ At a high level, the deployment sequence is:
 7. Install the `newsyslog` configuration.
 8. Load and start the Fluent Bit LaunchDaemon.
 
-Once complete, events begin flowing immediately with no additional runtime dependencies.
+Once complete, events start flowing immediately with no additional runtime dependencies.
 
 ## Operational Reference
 
@@ -128,18 +141,3 @@ Once complete, events begin flowing immediately with no additional runtime depen
 | Event log                     | `/usr/local/var/log/privileges/events.ndjson`  | Raw privilege events             |
 | Fluent Bit log                | `/usr/local/var/log/fluent-bit.log`           | Fluent Bit output                |
 | Fluent Bit error log          | `/usr/local/var/log/fluent-bit-error.log`     | Fluent Bit errors                |
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
