@@ -20,6 +20,8 @@ At the time of writing, syslog and webhook are the only supported RemoteLogging 
 
 Apple's Unified Logging system is designed for local diagnostics, not reliable external log forwarding. Although log stream can provide real-time output, logs are stored in a proprietary binary format, require elevated access, and cannot be safely tailed as durable flat files. Retention is managed dynamically by the OS and may be aggressively truncated under disk pressure, making it unsuitable as a consistent, long-term source for forwarding logs to SIEMs, data lakes, or other platforms.
 
+This leaves a gap where events can be queued offline but cannot be securely delivered to a modern authenticated API.
+
 ## Requirements
 
 - Stream [SAP Privileges](https://github.com/SAP/macOS-enterprise-privileges) events to remote API
@@ -31,6 +33,10 @@ Apple's Unified Logging system is designed for local diagnostics, not reliable e
 ## Solution Overview
 
 Because RemoteLogging and Apple's Unified Logging did not satisfy our requirements, we elected to introduce the lightweight endpoint log processor and forwarder [Fluent Bit](https://fluentbit.io/) in conjunction with [`newsyslog`](https://man.freebsd.org/cgi/man.cgi?newsyslog) for rotation of source logs. When devices are offline, events are logged locally in NDJSON format and periodically rolled over using newsyslog to prevent uncontrolled disk growth. When connectivity is restored, Fluent Bit automatically ships these events to the configured API endpoint with the required authentication and HTTP headers.
+
+#### Why NDJSON
+
+NDJSON (newline-delimited JSON) is intentionally used instead of a traditional JSON array because it allows each event to be written as a single, atomic line to disk. This makes the log file safely append-only, trivial to rotate, and easy for tail-based collectors like Fluent Bit to process without requiring full file reads or stateful parsing. Each line is independently valid JSON, enabling reliable recovery and replay across restarts and rotations.
 
 ### Data Flow
 
@@ -93,23 +99,36 @@ Once events reach Fluent Bit, it immediately parses each NDJSON record and attem
 
 > **Configuration**: See the complete [fluent-bit.conf](https://gist.github.com/oliver-reardon/8abf33308138d40e8563669b2db65de5) with input tail configuration, NDJSON parser, and HTTP output with authentication headers. The JWT authentication token is securely passed to Fluent Bit as an environment variable from the LaunchDaemon, keeping credentials out of the configuration file.
 
-### Components
+### Deployment Checklist
 
-| Component | Purpose | Location |
-|-----------|---------|----------|
-| `privileges_local_logger.sh` | Captures events in NDJSON format | `/usr/local/bin/` |
-| `fluent-bit.conf` | Configures log shipping to API | `/usr/local/etc/fluent-bit/` |
-| `parsers.conf` | JSON parsing rules for Fluent Bit | `/usr/local/etc/fluent-bit/` |
-| `newsyslog-privileges.conf` | Log rotation configuration | `/etc/newsyslog.d/` |
-| `com.privileges.fluent-bit.plist` | LaunchDaemon for Fluent Bit service | `/Library/LaunchDaemons/` |
+At a high level, the deployment sequence is:
 
-### Log Locations
+1. Install and configure SAP Privileges.
+2. Deploy `privileges_local_logger.sh` to `/usr/local/bin` and make it executable.
+3. Configure `PostChangeExecutablePath` to invoke the logger script.
+4. Install Fluent Bit.
+5. Deploy `fluent-bit.conf` and `parsers.conf`.
+6. Configure the Fluent Bit LaunchDaemon with the required environment variables (JWT).
+7. Install the `newsyslog` configuration.
+8. Load and start the Fluent Bit LaunchDaemon.
 
-| Log Type | Location | Purpose |
-|----------|----------|---------|
-| Event logs | `/usr/local/var/log/privileges/events.ndjson` | Raw privilege events |
-| Fluent Bit logs | `/usr/local/var/log/fluent-bit.log` | Fluent Bit output |
-| Fluent Bit errors | `/usr/local/var/log/fluent-bit-error.log` | Fluent Bit errors |
+Once complete, events begin flowing immediately with no additional runtime dependencies.
+
+## Operational Reference
+
+### File and Log Layout
+
+| Item                          | Path                                           | Purpose                          |
+|-------------------------------|------------------------------------------------|----------------------------------|
+| `privileges_local_logger.sh`  | `/usr/local/bin/`                              | Captures events in NDJSON format |
+| `fluent-bit.conf`             | `/usr/local/etc/fluent-bit/`                   | Fluent Bit pipeline configuration |
+| `parsers.conf`                | `/usr/local/etc/fluent-bit/`                   | NDJSON / JSON parsing rules      |
+| `newsyslog-privileges.conf`   | `/etc/newsyslog.d/`                            | Log rotation policy              |
+| `com.privileges.fluent-bit.plist` | `/Library/LaunchDaemons/`                  | LaunchDaemon for Fluent Bit      |
+| Event log                     | `/usr/local/var/log/privileges/events.ndjson`  | Raw privilege events             |
+| Fluent Bit log                | `/usr/local/var/log/fluent-bit.log`           | Fluent Bit output                |
+| Fluent Bit error log          | `/usr/local/var/log/fluent-bit-error.log`     | Fluent Bit errors                |
+
 
 
 
