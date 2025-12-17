@@ -2,7 +2,7 @@
 title: "Talent Profile"
 description: "Proven expertise in event-driven automation, security hardening, and infrastructure as code with a focus on reliability, performance, and efficiency."
 date: 2025-03-19T00:00:00Z
-lastmod: 2025-03-19T00:00:00Z
+lastmod: 2025-12-17T00:00:00Z
 type: "home"
 layout: "single"
 summary: "Proven expertise in diagnosing complex issues, event-driven automation, and infrastructure as code with a focus on reliability and efficiency."
@@ -30,12 +30,13 @@ Infrastructure as Code (IaC) · AI · OSQuery · Serverless Framework · Bash/Zs
 
 ## 🏆 Certifications & Achievements  
 
+- **[HashiCorp Certified: Terraform Associate](https://www.credly.com/badges/94f63417-b2fd-4da7-bd01-135fdb28b65b/public_url)**
+- **Jamf 200/300**
 - **Cisco Certified Network Associate (CCNA)**  
-- **Microsoft Certified: Azure Fundamentals**  
-- **CompTIA Network+**  
 - **R/GA Cube Award Winner**  
 - **Certified Kubernetes Administrator (CKA)** (In Progress)
-- **[HashiCorp Certified: Terraform Associate](https://www.credly.com/badges/94f63417-b2fd-4da7-bd01-135fdb28b65b/public_url)**
+- **Microsoft Certified: Azure Fundamentals**  
+- **CompTIA Network+**  
 - **Made 2,861 GitHub contributions** over the last year across various projects.
 ---
 
