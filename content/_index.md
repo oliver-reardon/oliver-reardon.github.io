@@ -100,7 +100,7 @@ Focused on web-based tool design and online motion graphics.
 - [**Restrict web app access using AWS WAF**](https://oliver-reardon.github.io/posts/protecting-fleetdm-with-aws-waf/) with CIDR ACL while keeping required API endpoints public.
 - **Provisioned an auto-scaling application** on AWS ECS with Fargate launch type and RDS, using Terraform.
 - [**Puppet Server**](https://github.com/oliver-reardon/puppet-core/tree/main) deployed on EC2 with ingress controlled security group and r10K control repo.
-- Engineered an AWS Managed Grafana instance** using Terraform, integrated with Okta for federated authentication.
+- **Engineered an AWS Managed Grafana instance** using Terraform, integrated with Okta for federated authentication.
 - [**Presented series data with Grafana & MySQL**](https://oliver-reardon.github.io/posts/application-usage-reports-using-grafana-and-mysql/) reducing software licensing costs and improving compliance.
 - [**Developed Python CLI**](https://oliver-reardon.github.io/posts/set-computer-management-status-jamf-pro/) to automate inventory data manipulation after a vendor change.  
 - **Built real-time security dashboards** with Splunk, integrating Jamf, Azure, Okta & OSQuery.  
