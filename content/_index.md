@@ -12,9 +12,7 @@ showToc: true
 showComments: false
 --- 
 
-Specializes in event-driven automation, security hardening, and compliance enforcement.
-Designs and deploys scalable, resilient systems optimized for reliability, performance, and efficiency.
-Experienced in incident management, observability, and infrastructure as code, with a strong focus on minimizing operational toil through automation and strategic design.
+Specializes in building scalable, high-impact systems with event-driven automation and a focus on reliability and reducing operational toil. Designs and delivers resilient solutions end-to-end, working across the stack. Experienced in observability, incident management, and infrastructure as code. Provides strong technical leadership, mentors engineers, and drives high standards while remaining hands-on.
 
 🔗 [LinkedIn](https://linkedin.com/in/oliver-reardon) | [GitHub](https://github.com/oliver-reardon)  
 
@@ -47,7 +45,7 @@ Infrastructure as Code (IaC) · AI · OSQuery · Serverless Framework · Bash/Zs
 - **Senior Client Platform Engineer (Team Lead)** *(Dec 2023 - June 2024)*  
 - **Client Platform Engineer** *(Sept 2023 - Dec 2023)*  
 
-Manager leading the Client Platform Engineering team, combining hands-on engineering expertise with strategic leadership to scale and maintain secure, reliable, and highly automated platform systems. Drive sprint planning, project execution, and cross-functional collaboration while actively contributing to system design, automation, and architectural decisions to improve efficiency and streamline operations.
+Client Platform Engineering Manager with deep expertise in diagnostic analysis and root cause investigation. Designs and delivers scalable, event-driven automation systems that improve reliability, performance, and operational efficiency, with a focus on reducing toil through automation. Experienced in observability, incident management, and infrastructure as code, working hands-on across systems to solve complex problems. Provides technical leadership, mentors engineers, and drives high standards while contributing directly to design and implementation.
 
 #### **Key Responsibilities:**  
 - Architect and unify cross-platform systems using proprietary APIs and data integrations.
