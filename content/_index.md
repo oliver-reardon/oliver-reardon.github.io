@@ -2,7 +2,7 @@
 title: "Talent Profile"
 description: "Proven expertise in event-driven automation, security hardening, and infrastructure as code with a focus on reliability, performance, and efficiency."
 date: 2025-03-19T00:00:00Z
-lastmod: 2025-12-17T00:00:00Z
+lastmod: 2026-03-31T00:00:00Z
 type: "home"
 layout: "single"
 summary: "Proven expertise in diagnosing complex issues, event-driven automation, and infrastructure as code with a focus on reliability and efficiency."
@@ -45,9 +45,9 @@ Infrastructure as Code (IaC) · AI · OSQuery · Serverless Framework · Bash/Zs
 - **Senior Client Platform Engineer (Team Lead)** *(Dec 2023 - June 2024)*  
 - **Client Platform Engineer** *(Sept 2023 - Dec 2023)*  
 
-Client Platform Engineering Manager with deep expertise in diagnostic analysis and root cause investigation. Designs and delivers scalable, event-driven automation systems that improve reliability, performance, and operational efficiency, with a focus on reducing toil through automation. Experienced in observability, incident management, and infrastructure as code, working hands-on across systems to solve complex problems. Provides technical leadership, mentors engineers, and drives high standards while contributing directly to design and implementation.
+Client Platform Engineering Manager operating as a hands-on senior individual contributor with deep expertise in diagnostic analysis and root cause investigation. Designs and delivers scalable, event-driven automation systems that improve reliability, performance, and operational efficiency, with a focus on reducing toil and creating reusable platform capabilities. Experienced in observability, incident management, and infrastructure as code, working end-to-end across systems to solve complex problems. Provides technical leadership, mentors engineers, and drives high standards while contributing directly to design and implementation.
 
-#### **Key Responsibilities:**  
+#### **Key Responsibilities / Projects:**  
 - Architect and unify cross-platform systems using proprietary APIs and data integrations.
 - Manage large-scale endpoint and fleet operations via MDM and configuration management.
 - Build aggregated event pipelines and shared metrics for SIEM and security observability.
@@ -92,12 +92,12 @@ Focused on web-based tool design and online motion graphics.
 
 > Certain repositories are limited to internal project work and can only be accessed within the current organization.
 
+- **Designed and built a production-grade deployment of [FleetDM](https://fleetdm.com/)** on AWS using Terraform, enabling real-time endpoint visibility across 4000+ devices and reducing setup/operational overhead by 20% through reusable, automated infrastructure.
 - [**Engineered offline-capable NDJSON log transport pipeline**](/posts/ndjson-event-buffered-transport-daemon/) for SAP Privileges (macOS) using Fluent Bit, `newsyslog`, and JWT-authenticated API forwarding.
+- **Developed a device lifecycle automation framework** using Python and GitHub Actions to synchronize management tasks across Jamf Pro, Microsoft Intune, and Google Admin. The system automates critical API-driven operations, including remote device locking with PIN generation, deprovisioning, and record deletion. Real-time Slack and CMDB integrations ensure a centralized audit trail for all automated security actions.
 - [**Log forwarding of osquery results**](https://oliver-reardon.github.io/posts/osquery-results-to-loki-with-kinesis-data-stream/) to Grafana Loki via AWS Kinesis Data Stream.
 - [**Automated secure browser proxy configuration at scale using AWS S3 and CloudFront**](https://oliver-reardon.github.io/posts/distributing-a-proxy-auto-configuration-using-aws/)
 - [**Restrict web app access using AWS WAF**](https://oliver-reardon.github.io/posts/protecting-fleetdm-with-aws-waf/) with CIDR ACL while keeping required API endpoints public.
-- **Provisioned an auto-scaling application** on AWS ECS with Fargate launch type and RDS, using Terraform.
-- [**Puppet Server**](https://github.com/oliver-reardon/puppet-core/tree/main) deployed on EC2 with ingress controlled security group and r10K control repo.
 - **Engineered an AWS Managed Grafana instance** using Terraform, integrated with Okta for federated authentication.
 - [**Presented series data with Grafana & MySQL**](https://oliver-reardon.github.io/posts/application-usage-reports-using-grafana-and-mysql/) reducing software licensing costs and improving compliance.
 - [**Developed Python CLI**](https://oliver-reardon.github.io/posts/set-computer-management-status-jamf-pro/) to automate inventory data manipulation after a vendor change.  
@@ -106,7 +106,6 @@ Focused on web-based tool design and online motion graphics.
 - **Implemented secure storage replication** for drive encryption keys with GnuPG & GitHub Actions.  
 - **Integrated software repo into a CI/CD pipeline** with GitHub pull request approvals.  
 - [**Created AWS Lambda function**](https://github.com/oliver-reardon/ms-graph-api-ea) to query Azure AD group membership efficiently.
-- **Automation pipelines** (CI/Lambda) used by external vendors and ITAM for audited requests and elevated access to management systems and tooling.
 - [**My Talent Profile**](https://github.com/oliver-reardon/oliver-reardon.github.io) produced using [hugo](https://gohugo.io/) and deployed using [GitHub Actions](https://github.com/oliver-reardon/oliver-reardon.github.io/blob/main/.github/workflows/deploy.yml) with cache validation.
 
 ---
