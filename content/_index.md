@@ -1,18 +1,18 @@
 ---
 title: "Talent Profile"
-description: "Proven expertise in event-driven automation, security hardening, and infrastructure as code with a focus on reliability, performance, and efficiency."
+description: "Builds scalable, secure infrastructure and endpoint platforms with a focus on macOS and cross-platform device management."
 date: 2025-03-19T00:00:00Z
 lastmod: 2026-03-31T00:00:00Z
 type: "home"
 layout: "single"
-summary: "Proven expertise in diagnosing complex issues, event-driven automation, and infrastructure as code with a focus on reliability and efficiency."
+summary: "Builds scalable, secure infrastructure and endpoint platforms with a focus on macOS and cross-platform device management. Uses event-driven automation and infrastructure as code to enforce security controls, improve reliability, and reduce operational toil. Designs and delivers resilient, end-to-end solutions across infrastructure, identity, and device fleets. Experienced in observability, incident response, and automated remediation. Provides strong technical leadership, mentors engineers, and drives high standards while remaining hands-on."
 draft: false
 categories: ["Portfolio", "Resume", "Skills"]
 showToc: true
 showComments: false
 --- 
 
-Specializes in building scalable, high-impact systems with event-driven automation and a focus on reliability and reducing operational toil. Designs and delivers resilient solutions end-to-end, working across the stack. Experienced in observability, incident management, and infrastructure as code. Provides strong technical leadership, mentors engineers, and drives high standards while remaining hands-on.
+Builds scalable, secure infrastructure and endpoint platforms with a focus on macOS and cross-platform device management. Uses event-driven automation and infrastructure as code to enforce security controls, improve reliability, and reduce operational toil. Designs and delivers resilient, end-to-end solutions across infrastructure, identity, and device fleets. Experienced in observability, incident response, and automated remediation. Provides strong technical leadership, mentors engineers, and drives high standards while remaining hands-on.
 
 🔗 [LinkedIn](https://linkedin.com/in/oliver-reardon) | [GitHub](https://github.com/oliver-reardon)  
 
@@ -47,8 +47,7 @@ Infrastructure as Code (IaC) · AI · OSQuery · Serverless Framework · Bash/Zs
 
 Client Platform Engineering Manager operating as a hands-on senior individual contributor with deep expertise in diagnostic analysis and root cause investigation. Designs and delivers scalable, event-driven automation systems that improve reliability, performance, and operational efficiency, with a focus on reducing toil and creating reusable platform capabilities. Experienced in observability, incident management, and infrastructure as code, working end-to-end across systems to solve complex problems. Provides technical leadership, mentors engineers, and drives high standards while contributing directly to design and implementation.
 
-#### **Key Responsibilities / Projects:**  
-- Architect and unify cross-platform systems using proprietary APIs and data integrations.
+#### **Key Responsibilities:**  
 - Manage large-scale endpoint and fleet operations via MDM and configuration management.
 - Build aggregated event pipelines and shared metrics for SIEM and security observability.
 - Design and implement scalable automation to drive reliability, efficiency, and operational resilience.
@@ -57,6 +56,8 @@ Client Platform Engineering Manager operating as a hands-on senior individual co
 - Lead Jira sprint planning, execution tracking, and delivery for operational engineering initiatives.
 - Oversee Terraform + Scalr pipelines for infrastructure provisioning, cost visibility, and governance.
 - Partner with SOC to validate findings and execute security remediation.
+- Designed and enforced macOS endpoint security controls (disk encryption, OS hardening, device compliance policies), integrating signals into identity providers to support device trust and conditional access.
+- Built automated security workflows using Terraform and CI/CD pipelines to provision, audit, and remediate endpoint configurations across the fleet, ensuring consistent compliance and reducing manual intervention.
 
 ---
 
