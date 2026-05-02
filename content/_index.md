@@ -1,20 +1,18 @@
 ---
 title: "Talent Profile"
-description: "Proven expertise in event-driven automation, security hardening, and infrastructure as code with a focus on reliability, performance, and efficiency."
+description: "Builds scalable, secure infrastructure and endpoint platforms with a focus on macOS and cross-platform device management."
 date: 2025-03-19T00:00:00Z
 lastmod: 2025-12-17T00:00:00Z
 type: "home"
 layout: "single"
-summary: "Proven expertise in diagnosing complex issues, event-driven automation, and infrastructure as code with a focus on reliability and efficiency."
+summary: "Builds scalable, secure infrastructure and endpoint platforms with a focus on macOS and cross-platform device management. Uses event-driven automation and infrastructure as code to enforce security controls, improve reliability, and reduce operational toil. Designs and delivers resilient, end-to-end solutions across infrastructure, identity, and device fleets. Experienced in observability, incident response, and automated remediation. Provides strong technical leadership, mentors engineers, and drives high standards while remaining hands-on."
 draft: false
 categories: ["Portfolio", "Resume", "Skills"]
 showToc: true
 showComments: false
 --- 
 
-Specializes in event-driven automation, security hardening, and compliance enforcement.
-Designs and deploys scalable, resilient systems optimized for reliability, performance, and efficiency.
-Experienced in incident management, observability, and infrastructure as code, with a strong focus on minimizing operational toil through automation and strategic design.
+Builds scalable, secure infrastructure and endpoint platforms with a focus on macOS and cross-platform device management. Uses event-driven automation and infrastructure as code to enforce security controls, improve reliability, and reduce operational toil. Designs and delivers resilient, end-to-end solutions across infrastructure, identity, and device fleets. Experienced in observability, incident response, and automated remediation. Provides strong technical leadership, mentors engineers, and drives high standards while remaining hands-on.
 
 🔗 [LinkedIn](https://linkedin.com/in/oliver-reardon) | [GitHub](https://github.com/oliver-reardon)  
 
@@ -50,7 +48,6 @@ Infrastructure as Code (IaC) · AI · OSQuery · Serverless Framework · Bash/Zs
 Manager leading the Client Platform Engineering team, combining hands-on engineering expertise with strategic leadership to scale and maintain secure, reliable, and highly automated platform systems. Drive sprint planning, project execution, and cross-functional collaboration while actively contributing to system design, automation, and architectural decisions to improve efficiency and streamline operations.
 
 #### **Key Responsibilities:**  
-- Architect and unify cross-platform systems using proprietary APIs and data integrations.
 - Manage large-scale endpoint and fleet operations via MDM and configuration management.
 - Build aggregated event pipelines and shared metrics for SIEM and security observability.
 - Design and implement scalable automation to drive reliability, efficiency, and operational resilience.
@@ -59,6 +56,8 @@ Manager leading the Client Platform Engineering team, combining hands-on enginee
 - Lead Jira sprint planning, execution tracking, and delivery for operational engineering initiatives.
 - Oversee Terraform + Scalr pipelines for infrastructure provisioning, cost visibility, and governance.
 - Partner with SOC to validate findings and execute security remediation.
+- Designed and enforced macOS endpoint security controls (disk encryption, OS hardening, device compliance policies), integrating signals into identity providers to support device trust and conditional access.
+- Built automated security workflows using Terraform and CI/CD pipelines to provision, audit, and remediate endpoint configurations across the fleet, ensuring consistent compliance and reducing manual intervention.
 
 ---
 
